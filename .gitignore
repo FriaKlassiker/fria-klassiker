@@ -1,12 +1,3 @@
 _bygg/
 __pycache__/
 *.whl
-.DS_Store
-.venv/
-*.log
-PUBLICERING.md
-config.local.json
-*.safetensors
-*.gguf
-adapters/
-training/

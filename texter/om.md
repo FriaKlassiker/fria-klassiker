@@ -10,7 +10,8 @@ Alla texter på webbplatsen har översatts av en språkmodell, inte av en mänsk
 
 ## Vilken modell har översatt vad?
 
-- Platon (*Sokrates försvarstal*, *Kriton*, *Faidon*) och Epiktetos (*Handboken*): Claude Opus 5.5 (Anthropic), direkt från grekiskan med äldre engelsk översättning som stöd.
+- Platon (*Euthyfron*, *Sokrates försvarstal*, *Kriton*, *Faidon*) och Epiktetos (*Handboken*): Claude Opus 5.5 (Anthropic), direkt från grekiskan med äldre engelsk översättning som stöd.
+- Aristoteles (*Kategorierna*): Claude Opus 5.5 (Anthropic), direkt från grekiskan och kontrollerad mot Owens engelska (1853), med terminologi efter Mikael Lindéns översättning av Metafysiken.
 - *Försokratikerna*: ChatGPT 6.1 (OpenAI). För tio av de arton tänkarna är översättningen gjord från John Burnets engelska översättning (1920), alltså via engelskan. För de övriga från den grekiska eller latinska texten med äldre översättningar som stöd. Varje fragment anger vad det bygger på.
 
 ## Så gick det till
@@ -29,11 +30,6 @@ Projektet är också ett test av hur väl språkmodeller klarar svår prosa på 
 
 Översättningarna ges ut under licensen [Creative Commons Erkännande-DelaLika 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.sv). Du får kopiera, sprida, skriva ut och bearbeta dem, även kommersiellt, om du anger källan och delar vidare under samma licens.
 
-Den grekiska texten till Platon och Epiktetos kommer från [Perseus Digital Library](https://www.perseus.tufts.edu/) vid Tufts University (CC BY-SA 4.0). Försokratikernas grundtext kommer från [The Presocratic Reader](https://sergiubisceanu.github.io/presocratic-reader/) av Sergiu Alexandru Bîsceanu, med transkriptioner från Open Greek and Latin / First1KGreek, Forage och Perseus (CC BY-SA 4.0). Alla stödöversättningar, bland andra H. N. Fowler 1914, George Long 1890, John Burnet 1920, Hermann Diels 1922 och R. D. Hicks 1925, är fria från upphovsrätt.
+Den grekiska texten till Platon och Epiktetos kommer från [Perseus Digital Library](https://www.perseus.tufts.edu/) vid Tufts University (CC BY-SA 4.0). Försokratikernas grundtext kommer från [The Presocratic Reader](https://sergiubisceanu.github.io/presocratic-reader/) av Sergiu Alexandru Bîsceanu, med transkriptioner från Open Greek and Latin / First1KGreek, Forage och Perseus (CC BY-SA 4.0). Alla stödöversättningar, bland andra H. N. Fowler 1914, George Long 1890, Octavius Freire Owen 1853, John Burnet 1920, Hermann Diels 1922 och R. D. Hicks 1925, är fria från upphovsrätt.
 
-Utgivare: {utgivare}. Kontakt och rättelser: [{repo_url}/issues]({repo_url}/issues).
-Källfiler: [{repo_url}]({repo_url}).
-
-Modellnamnen ovan återger uppgifterna i levererat underlag. Råa API-loggar har
-inte verifierats oberoende. Granskningsstatus ska inte ändras till granskad
-förrän en faktisk mänsklig genomläsning har bekräftats.
+Utgivare: {utgivare}. Kontakt: {kontakt_epost}. Källfiler: [{repo_url}]({repo_url}).

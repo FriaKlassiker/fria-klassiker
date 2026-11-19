@@ -10,11 +10,24 @@
   "modell": "Claude Opus 5.5",
   "modelltillverkare": "Anthropic",
   "oversattningsmanad": "november 2026",
-  "kontakt_epost": "",
-  "repo_url": "https://github.com/VesterlundCoder/fria-klassiker",
-  "site_url": "https://vesterlundcoder.github.io/fria-klassiker/",
+  "kontakt_epost": "David@vesterlundventures.se",
+  "repo_url": "https://github.com/FriaKlassiker/fria-klassiker",
+  "site_url": "https://friaklassiker.github.io/fria-klassiker/",
   "doi": "",
   "verk": [
+    {
+      "id": "euthyfron",
+      "fil": "euthyfron.md",
+      "forfattare": "Platon",
+      "titel": "Euthyfron",
+      "originaltitel": "Εὐθύφρων (Euthyphrōn)",
+      "refsystem": "stephanus",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1905, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Sokrates är på väg till kungens pelargång i Aten för att ta emot Meletos anklagelse för gudlöshet. Där möter han Euthyfron, en präst och spåman som just har åtalat sin egen far för mord. Euthyfron är säker på att han vet vad fromhet är, och Sokrates ber honom förklara. Dialogen innehåller den berömda frågan om det fromma älskas av gudarna därför att det är fromt, eller är fromt därför att gudarna älskar det."
+    },
     {
       "id": "forsvarstalet",
       "fil": "forsvarstalet.md",
@@ -22,7 +35,7 @@
       "titel": "Sokrates försvarstal",
       "originaltitel": "Ἀπολογία Σωκράτους (Apologia Sōkratous)",
       "refsystem": "stephanus",
-      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, digital utgåva i Perseus Digital Library (canonical-greekLit; TEI-källans metadata anger Oxford 1905), CC BY-SA 4.0",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1905, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
       "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
       "isbn_epub": "",
       "isbn_pdf": "",
@@ -35,7 +48,7 @@
       "titel": "Kriton",
       "originaltitel": "Κρίτων (Kritōn)",
       "refsystem": "stephanus",
-      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, digital utgåva i Perseus Digital Library (canonical-greekLit; TEI-källans metadata anger Oxford 1905), CC BY-SA 4.0",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1905, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
       "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
       "isbn_epub": "",
       "isbn_pdf": "",
@@ -48,7 +61,7 @@
       "titel": "Faidon",
       "originaltitel": "Φαίδων (Phaidōn)",
       "refsystem": "stephanus",
-      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, digital utgåva i Perseus Digital Library (canonical-greekLit; TEI-källans metadata anger Oxford 1905), CC BY-SA 4.0",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1905, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
       "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
       "isbn_epub": "",
       "isbn_pdf": "",
@@ -66,6 +79,29 @@
       "isbn_epub": "",
       "isbn_pdf": "",
       "ingress": "Epiktetos (ca 50–135 e.Kr.) föddes som slav och blev en av de mest lästa stoiska lärarna. Han skrev själv ingenting. Hans elev Arrianos tecknade ned undervisningen och sammanfattade dess kärna i denna korta handbok. Den börjar med skillnaden mellan det som står i vår makt och det som inte gör det."
+    },
+    {
+      "id": "kategorierna",
+      "fil": "kategorierna.md",
+      "forfattare": "Aristoteles",
+      "titel": "Kategorierna",
+      "originaltitel": "Κατηγορίαι (Katēgoriai)",
+      "refsystem": "avsnitt",
+      "modell": "Claude Opus 5.5",
+      "modelltillverkare": "Anthropic",
+      "oversattningsmanad": "november 2026",
+      "ai_metod": "Texten har översatts direkt från grekiskan av språkmodellen {modell} i {manad} och därefter kontrollerats mot en äldre engelsk översättning (Octavius Freire Owen, 1853). Terminologin följer Mikael Lindéns svenska översättning av Aristoteles Metafysik, så att till exempel ousia återges med väsen, poion med beskaffenhet och symbebêkos med åtföljande.",
+      "grekiska": "Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, digital utgåva i Open Greek and Latin / First1KGreek (University of Leipzig), CC BY-SA 4.0",
+      "engelska": "Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt)",
+      "kolofon_kallor": [
+        "Grekisk text: Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, i digital utgåva från Open Greek and Latin / First1KGreek (University of Leipzig).",
+        "Engelsk kontrollöversättning: Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt).",
+        "Terminologin följer Mikael Lindéns översättning av Metafysiken; ingen text ur den har återgivits."
+      ],
+      "licens_kalla": "Den grekiska texten kommer från Open Greek and Latin / First1KGreek, University of Leipzig, under samma licens.",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Kategorierna är den första skriften i Aristoteles logiska verk, Organon. Den frågar vad det är vi talar om när vi säger något om något, och delar in allt som sägs utan förbindelse i tio slag: väsen, mängd, beskaffenhet, det relativa, var, när, läge, innehav, görande och undergående. Den långa delen om väsen, med skillnaden mellan första väsen (den enskilda människan) och andra väsen (arten och släktet), har präglat hela den västerländska filosofin. Skriften avslutas med de så kallade postpraedicamenta: om motsatser, om tidigare och samtidigt, om rörelse och om att ha."
     },
     {
       "id": "forsokratikerna",
@@ -99,13 +135,14 @@
       "titel": "Sokrates sista dagar",
       "forfattare": "Platon",
       "delar": [
+        "euthyfron",
         "forsvarstalet",
         "kriton",
         "faidon"
       ],
       "isbn_epub": "",
       "isbn_pdf": "",
-      "ingress": "De tre dialogerna följer Sokrates från rättegången till döden: Försvarstalet vid domstolen, Kriton i fängelset några dagar före avrättningen och Faidon på den sista dagen. Tillsammans är de den mest lästa ingången till Platon och till den sokratiska filosofin."
+      "ingress": "De fyra dialogerna följer Sokrates från anklagelsen till döden: Euthyfron vid kungens pelargång när han ska ta emot anklagelsen, Försvarstalet vid domstolen, Kriton i fängelset några dagar före avrättningen och Faidon på den sista dagen. Redan i antiken lästes de som en tetralogi, och de är fortfarande den mest lästa ingången till Platon och till den sokratiska filosofin."
     }
   ]
 }

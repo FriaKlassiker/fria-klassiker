@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 216" role="img" aria-labelledby="title desc">
+<title id="title">Fria klassiker</title><desc id="desc">Fria klassikers logotyp med ett öppet bokuppslag i en klassisk båge.</desc>
+<rect width="820" height="216" rx="12" fill="#f8f4ec"/>
+<g transform="translate(9,9) scale(.825)"><rect width="240" height="240" rx="46" fill="#5b2b2d"/>
+<rect x="12" y="12" width="216" height="216" rx="37" fill="none" stroke="#cba86c" stroke-width="2" opacity=".65"/>
+<path d="M58 145V96a62 62 0 0 1 124 0v49" fill="none" stroke="#e0c58b" stroke-width="7"/>
+<circle cx="120" cy="91" r="7" fill="#e0c58b"/>
+<path d="M41 157q38-15 79 13q41-28 79-13v42q-40-11-79 12q-38-23-79-12z" fill="#f7efe0"/>
+<path d="M120 170v41M53 169q37-8 57 11m20 0q22-19 57-11" fill="none" stroke="#aa805e" stroke-width="3.5"/></g>
+<text x="245" y="105" font-size="60" font-family="Georgia,serif" fill="#382927" font-weight="700">Fria klassiker</text>
+<text x="247" y="148" font-size="17" font-family="Arial,sans-serif" letter-spacing="5" fill="#846a4c">ETT ÖPPET BIBLIOTEK</text>
+</svg>

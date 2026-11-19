@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+<title id="title">Fria klassiker</title>
+<desc id="desc">Ett öppet bokuppslag under en klassisk valvbåge, i mässingsguld på vinröd botten.</desc>
+<rect width="240" height="240" rx="46" fill="#5b2b2d"/>
+<rect x="12" y="12" width="216" height="216" rx="37" fill="none" stroke="#cba86c" stroke-width="2" opacity=".65"/>
+<path d="M58 145V96a62 62 0 0 1 124 0v49" fill="none" stroke="#e0c58b" stroke-width="7" stroke-linecap="square"/>
+<path d="M77 127V100m86 27v-27" stroke="#cba86c" stroke-width="4" opacity=".8"/>
+<circle cx="120" cy="91" r="7" fill="#e0c58b"/>
+<path d="M41 157q38-15 79 13q41-28 79-13v42q-40-11-79 12q-38-23-79-12z" fill="#f7efe0"/>
+<path d="M120 170v41M53 169q37-8 57 11m20 0q22-19 57-11" fill="none" stroke="#aa805e" stroke-width="3.5"/>
+<path d="M120 47v19m-24-14 9 13m39-13-9 13" stroke="#e0c58b" stroke-width="3" stroke-linecap="round"/>
+</svg>

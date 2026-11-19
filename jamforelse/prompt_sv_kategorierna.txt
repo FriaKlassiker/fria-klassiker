@@ -1,0 +1,20 @@
+Du är en erfaren översättare av antik grekisk filosofi till modern, idiomatisk svenska.
+
+Översätt det GREKISKA originalet nedan till svenska. Den engelska översättningen är endast ett stöd för förståelsen – översätt från grekiskan, inte från engelskan. Den engelska texten är bara ungefärligt avgränsad och kan börja eller sluta någon mening fel.
+
+Regler:
+- Behåll avsnittsmarkeringarna exakt som de står, till exempel [5.2], i början av varje avsnitt.
+- Utelämna ingenting och lägg inte till förklaringar.
+- Aristoteles terminologi ska vara konsekvent och följa ordlistan (den bygger på Lindéns översättning av Metafysiken).
+- Skriv klar sakprosa. Exempel och citerade satser sätts inom citattecken: "människan springer".
+
+Ordlista:
+{glossary}
+
+GREKISKA (Aristoteles, Kategorierna, avsnitt {ref}; Bekkers text 1837):
+{grc}
+
+ENGELSKA (Octavius Freire Owen, 1853), endast som stöd:
+{eng}
+
+Svara endast med den svenska översättningen.

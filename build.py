@@ -34,10 +34,17 @@ def md_escape_start(rad):
 def text_till_md(verk):
     """Källfilen har en rad per stycke och '## N' för Stephanus-sidor eller kapitel."""
     rader = (ROT / 'texter' / verk['fil']).read_text(encoding='utf-8').splitlines()
-    ut, vantande = [], None
+    ut, vantande, kapitel = [], None, None
     for rad in rader:
         rad = rad.strip()
         if not rad:
+            continue
+        m2 = re.fullmatch(r'##\s*(\d+)\.(\d+)', rad)
+        if m2 and verk['refsystem'] == 'avsnitt':
+            if m2.group(1) != kapitel:
+                kapitel = m2.group(1)
+                ut.append(f'## {kapitel} {{#{verk["id"]}-{kapitel} .unnumbered}}')
+            vantande = f'{m2.group(1)}.{m2.group(2)}'
             continue
         m = re.fullmatch(r'##\s*(\d+)', rad)
         if m:
@@ -92,12 +99,11 @@ def ai_text(verk_lista):
         metod = (f'Texten har översatts direkt från grekiskan av språkmodellen {modellnamn(v0)} '
                  f'i {M(v0, "oversattningsmanad")}. '
                  f'Som stöd för förståelsen användes en äldre engelsk översättning ({eng}).')
-    kontakt = (f'till {CFG["kontakt_epost"]} eller via ' if CFG.get("kontakt_epost") else 'via ')
     return (
         '**Det här är en AI-översättning.** ' + metod + f' {granskningsmening()}\n\n'
         'En AI-översättning kan innehålla fel: en mening kan vara feltolkad, en nyans kan ha gått förlorad '
         'eller en bisats ha fallit bort. Den ersätter inte en vetenskaplig utgåva. '
-        f'Hittar du ett fel, hör gärna av dig {kontakt}{CFG["repo_url"]}/issues.\n'
+        f'Hittar du ett fel, hör gärna av dig till {CFG["kontakt_epost"]} eller via {CFG["repo_url"]}/issues.\n'
     )
 
 
@@ -109,6 +115,10 @@ def hanvisning(verk_lista):
                      'det system som används för att hänvisa till Platons texter i alla språk.')
     if 'kapitel' in s:
         delar.append('Kapitelindelningen följer den vedertagna numreringen av Handboken.')
+    if 'avsnitt' in s:
+        delar.append('Siffrorna i marginalen anger kapitel och avsnitt enligt den digitala utgåvan i First1KGreek. '
+                     'Den vedertagna Bekkernumreringen (1a–15b) finns inte i den digitala texten och anges därför inte. '
+                     'Hakparenteser markerar ord som saknas i den digitala texten men finns i de tryckta utgåvorna.')
     return ' '.join(delar)
 
 
@@ -173,8 +183,8 @@ def bok_md(bok_id, titel, forf, verk_lista, ingress, isbn_epub, isbn_pdf, fmt):
 
 def omslag(bok_id, titel, forf, ut, rad='Översatt från grekiskan'):
     from PIL import Image, ImageDraw, ImageFont
-    font = str(ROT / 'mallar/fonts/Cardo-Regular.ttf')
-    fonti = str(ROT / 'mallar/fonts/Cardo-Italic.ttf')
+    font = '/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-regular.otf'
+    fonti = '/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-italic.otf'
     if not Path(font).exists():
         import glob
         font = fonti = (glob.glob('/usr/share/fonts/**/DejaVuSerif.ttf', recursive=True) or [None])[0]
@@ -249,7 +259,7 @@ def bygg_bocker():
         meta = [
             '--metadata', f'title={titel}', '--metadata', f'author={forf}',
             '--metadata', 'lang=sv-SE', '--metadata', f'date={CFG["datum"]}',
-            '--metadata', f'subtitle={v0.get("undertitel", "Översatt från grekiskan med AI")} · {CFG["serie"]}' + ('' if CFG['granskad'] else ' · Granskningsexemplar'),
+            '--metadata', f'subtitle={v0.get("undertitel", "Översatt från grekiskan med AI")} · {CFG["serie"]}',
             '--metadata', f'publisher={CFG["utgivare"]}',
             '--metadata', 'rights=CC BY-SA 4.0',
             '--metadata', f'contributor=Översättning: {modellnamn(v0)}'
@@ -263,8 +273,7 @@ def bygg_bocker():
         src.write_text(bok_md(bok_id, titel, forf, vl, ingress, ie, ip, 'epub'), encoding='utf-8')
         pandoc(str(src), '-f', 'markdown', '-o', str(NED / f'{fn}.epub'), '--toc', '--toc-depth=1',
                '--split-level=1', '--css', str(ROT / 'mallar' / 'stil.css'),
-               '--epub-cover-image', str(cover), '--lua-filter', str(ROT / 'filter' / 'steph.lua'),
-               '--epub-embed-font', str(ROT / 'mallar/fonts/Cardo-Regular.ttf'), *meta)
+               '--epub-cover-image', str(cover), '--lua-filter', str(ROT / 'filter' / 'steph.lua'), *meta)
         # PDF
         src = BYGG / f'{bok_id}-pdf.md'
         src.write_text(bok_md(bok_id, titel, forf, vl, ingress, ie, ip, 'pdf'), encoding='utf-8')
@@ -277,16 +286,7 @@ def bygg_bocker():
                    '-V', 'colorlinks=true', '-V', 'linkcolor=black', '-V', 'urlcolor=black', *meta]
         if len(vl) > 1 or v0.get('typ') == 'fragment':
             pdfargs.append('--toc')
-        if shutil.which('xelatex'):
-            pandoc(*pdfargs)
-        else:
-            if not shutil.which('weasyprint'):
-                sys.exit('PDF kräver xelatex eller weasyprint.')
-            pandoc(str(src), '-f', 'markdown', '-t', 'html5', '--standalone',
-                   '-o', str(NED / f'{fn}.pdf'), '--pdf-engine=weasyprint',
-                   '--css', str(ROT / 'mallar/pdf.css'),
-                   '--lua-filter', str(ROT / 'filter/steph.lua'),
-                   '--toc', '--toc-depth=1', *meta)
+        pandoc(*pdfargs)
         print('byggd:', fn)
 
 

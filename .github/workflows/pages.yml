@@ -1,7 +1,9 @@
-# Manuell publicering efter granskning. Ingen automatisk publicering vid push.
+# Publicerar mappen site/ med GitHub Pages vid varje push till main.
 # Aktivera i repots Settings → Pages → Source: GitHub Actions.
 name: Publicera webbplatsen
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
