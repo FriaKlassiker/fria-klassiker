@@ -2,7 +2,7 @@
 
 Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 
-**Alla texter är AI-översättningar.** Platon, Aristoteles och Epiktetos är översatta direkt från grekiskan av Claude Opus 5.5 (Anthropic). Försokratikerna är översatta av ChatGPT 6.1 (OpenAI), delvis via John Burnets engelska. **Utgåvorna är arbetsversioner och är ännu inte externt fackgranskade.** Se `site/om.html` för metoden.
+**Alla texter är AI-översättningar.** Platon, Aristoteles, Epiktetos och Marcus Aurelius är översatta direkt från grekiskan av Claude Opus 5.5 (Anthropic). Försokratikerna är översatta av ChatGPT 6.1 (OpenAI), delvis via John Burnets engelska. **Utgåvorna är arbetsversioner och är ännu inte externt fackgranskade.** Se `site/om.html` för metoden.
 
 ## Innehåll
 
@@ -13,7 +13,9 @@ Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 | Platon: Kriton | Burnet 1905 (Perseus) | Fowler 1914 |
 | Platon: Faidon | Burnet 1905 (Perseus) | Fowler 1914 |
 | Aristoteles: Kategorierna | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Lindén |
+| Aristoteles: Om tolkningen | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Lindén och Kategorierna |
 | Epiktetos: Handboken | Schenkl 1916 (Perseus) | Long 1890 |
+| Marcus Aurelius: Självbetraktelser | Leopold 1908 (Perseus) | Haines 1916 (kontroll) |
 | *Sokrates sista dagar* (samlingsvolym: de fyra Platondialogerna) | | |
 | *Försokratikerna* (805 fragment och vittnesmål, 18 tänkare) | Diels 1903–1922 (The Presocratic Reader) | Burnet 1920 m.fl.; tio tänkare översatta via Burnets engelska |
 
@@ -32,6 +34,7 @@ Varje utgåva finns som webbsida, EPUB och PDF. **Undantag:** *Staten* har en PD
 - Webbplats: `site/index.html` och `site/portal.css` med responsiv bokkatalog, sökning och läslägen.
 - Logotyp: `site/assets/brand-mark.svg`, `site/assets/logo-horizontal.svg` samt PNG-varianter.
 - GitHub-organisationsprofil: `org-profile/profile/README.md` och profilbilden som hör dit.
+- *Om tolkningen* och *Självbetraktelser*: de levererade PDF/EPUB-filerna bevaras oförändrade i `site/nedladdning/`, inklusive deras omslag. EPUB-texten återges i lässidor av `scripts/import_epub_editions.py`. Renskriven text med passageindelning finns i `texter/`.
 - *Staten*, bok I–II: original-PDF i `site/nedladdning/`, en från PDF-textlagret rekonstruerad EPUB, en webbläsarutgåva och ett bearbetningsbart Markdown-utdrag i `texter/`.
 - PDF-textlagrets rekonstruerade lästext bör kontrolleras mot PDF vid exakta citat.
 
@@ -40,12 +43,12 @@ Varje utgåva finns som webbsida, EPUB och PDF. **Undantag:** *Staten* har en PD
 ```
 python3 build.py            # böcker + webbplats
 python3 build.py --bara-site
-python3 scripts/enhance_site.py  # behöver BeautifulSoup4; kör sist
+python3 scripts/enhance_site.py  # behöver BeautifulSoup4; kör sist; genererar också EPUB-importerade lässidor
 ```
 
 Kräver pandoc ≥ 3, TeX Live (xelatex, KOMA-Script, TeX Gyre Pagella, Cardo) och Pillow.
 
-Så länge `"granskad": false` i `config.json` märks alla filer som granskningsexemplar och får filnamnet `-granskning`. Sätt `true` när texten är genomläst.
+Så länge `"granskad": false` i `config.json` märks genererade filer som granskningsexemplar och får filnamnet `-granskning`. De två EPUB-importerade utgåvorna behåller sina levererade filer och sin granskningsmärkning oavsett bygginställning. Sätt `true` först efter verifierad granskning.
 
 ## Rättelser
 
@@ -58,3 +61,7 @@ Texterna: [CC BY-SA 4.0](LICENSE). Den grekiska texten till Platon och Epiktetos
 ### Publicering
 
 Se `PUBLICERA_GITHUB.md` för steg för steg om repository, organisationens profil och Pages. Ingen GitHub-publicering sker automatiskt när ZIP-arkivet packas upp.
+
+## Redaktionell kontroll inför framtida revision
+
+De uppladdade PDF- och EPUB-filerna för *Om tolkningen* och *Självbetraktelser* innehåller platshållaren `ANVANDARNAMN` i kontakt-/projektlänkar. Webbläsarutgåvorna länkar till det rätta GitHub-projektet; nedladdningsfilerna har bevarats oförändrade för att respektera originalutgåvorna. Inledningen till *Självbetraktelser* innehåller dessutom en missvisande hänvisning till Bekkernumrering som bör rättas i nästa dokumentversion. Ingen automatisk filologisk granskning har utförts.

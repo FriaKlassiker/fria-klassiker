@@ -20,10 +20,12 @@ specials={
  'sokrates-sista-dagar':{'id':'sokrates-sista-dagar','titel':'Sokrates sista dagar','forfattare':'Platon','ingress':'Följ Sokrates från anklagelsen till den sista dagen i fängelset. De fyra dialogerna Euthyfron, Sokrates försvarstal, Kriton och Faidon samlas här i den ordning som berättelsen utspelar sig.','category':'Platon','tag':'Samlingsvolym','art':'sokrates-sista-dagar','format':'-granskning','path':'sokrates-sista-dagar'},
  'staten-bok-i-ii':{'id':'staten-bok-i-ii','titel':'Staten, bok I–II','forfattare':'Platon','ingress':'Vad är rättvisa? Sokrates diskuterar den starkares rätt och stadens uppkomst med Thrasymachos, Glaukon och Adeimantos. Endast de två första av verkets tio böcker är översatta här, via Paul Shoreys engelska text med grekiska kontroller.','category':'Platon','tag':'Endast bok I–II','art':'staten-bok-i-ii','format':'-arbetsutgava','path':'staten-bok-i-ii'}
 }
-category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment'}
+category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment','omtolkningen':'Aristoteles','sjalvbetraktelser':'Stoa'}
 book_data={b['id']:{**b,'category':category.get(b['id'],'Övrigt'),'tag':'AI-översättning','art':b['id'],'format':'-granskning','path':b['id']} for b in CONFIG['verk']}
 book_data.update(specials)
-ordered=['sokrates-sista-dagar','forsokratikerna','staten-bok-i-ii','euthyfron','forsvarstalet','kriton','faidon','kategorierna','handboken']
+for b in CONFIG.get('importerade_verk', []):
+ book_data[b['id']] = {**b, 'category':category.get(b['id'],'Övrigt'), 'tag':'Ny utgåva', 'art':b['id'], 'format':'-granskning','path':b['id']}
+ordered=['sokrates-sista-dagar','sjalvbetraktelser','omtolkningen','forsokratikerna','staten-bok-i-ii','euthyfron','forsvarstalet','kriton','faidon','kategorierna','handboken']
 
 
 def q(s):return html.escape(str(s),quote=True)
@@ -76,7 +78,7 @@ def homepage():
  search_icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>'
  return f'''<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Fria klassiker – Antik filosofi. Nytt liv på svenska.</title>
- <meta name="description" content="Fria svenska läsutgåvor av Platon, Aristoteles, Epiktetos och försokratikerna. Läs online eller ladda ned PDF och EPUB. Öppna AI-översättningar med redovisad metod.">
+ <meta name="description" content="Fria svenska läsutgåvor av Platon, Aristoteles, Marcus Aurelius, Epiktetos och försokratikerna. Läs online eller ladda ned PDF och EPUB. Öppna AI-översättningar med redovisad metod.">
  <meta name="theme-color" content="#5b2b2d"><meta property="og:type" content="website"><meta property="og:title" content="Fria klassiker"><meta property="og:description" content="Antik filosofi på modern svenska, fritt att läsa, dela och förbättra.">
  <meta property="og:image" content="{SITE_URL}assets/logo-horizontal.png"><link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
  <link rel="stylesheet" href="stil.css"><link rel="stylesheet" href="portal.css"><script defer src="portal.js"></script></head>
@@ -90,7 +92,7 @@ def homepage():
  </div><div class="hero-art" aria-hidden="true"><div class="art-circle"></div>
  <img class="hero-cover hero-cover-a" src="nedladdning/forsokratikerna-omslag.jpg" alt="">
  <img class="hero-cover hero-cover-b" src="nedladdning/sokrates-sista-dagar-omslag.jpg" alt="">
- <img class="hero-cover hero-cover-c" src="nedladdning/staten-bok-i-ii-omslag.jpg" alt="">
+ <img class="hero-cover hero-cover-c" src="nedladdning/sjalvbetraktelser-omslag.jpg" alt="">
  <div class="hero-stamp">Läs · Dela<br>Utforska<br>Fritt</div></div></div></section>
  <div class="stats-band"><div class="site-container stats-inner"><div class="stat"><b>{count}</b><span>utgåvor i biblioteket</span></div><div class="stat"><b>805</b><span>försokratiska textposter</span></div><div class="stat"><b>2</b><span>nedladdningsformat</span></div></div></div>
  <section class="site-container section-pad" id="bibliotek"><div class="section-heading"><div><div class="eyebrow">Bokhyllan</div><h2>Upptäck ett verk</h2></div>
@@ -115,6 +117,9 @@ def book_toolbar(id):
 def update_existing_page(filename,id=None):
  p=SITE/filename
  s=BeautifulSoup(p.read_text(encoding='utf-8'),'html.parser')
+ # Re-running after an already enhanced site must not duplicate navigation.
+ if s.body and (set(s.body.get('class',[])) & {'reader-page','information-page'}):
+  return
  reader=id is not None
  s.body['class']=['reader-page' if reader else 'information-page']
  for old in s.body.select('.utkast, header.topp, footer.fot'):
@@ -196,5 +201,10 @@ if __name__=='__main__':
  for name in ['om.html','rattelser.html']:update_existing_page(name)
  staten_page();socrates_page()
  (SITE/'index.html').write_text(homepage(),encoding='utf-8')
- update_docs();org_profile()
- print('Created modern portal, nine library entries, reading views, and organization profile.')
+ from import_epub_editions import make_page
+ for b in CONFIG.get('importerade_verk', []):
+  make_page(b, header, alert, footer, book_toolbar)
+ # Documentation and the organization profile are managed as standalone files.
+ if not (ROOT/'PUBLICERA_GITHUB.md').exists():update_docs()
+ if not (ROOT/'org-profile/profile/README.md').exists():org_profile()
+ print(f'Updated portal with {len(ordered)} library editions.')

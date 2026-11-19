@@ -11,7 +11,8 @@ Alla texter på webbplatsen har översatts av en språkmodell, inte av en mänsk
 ## Vilken modell har översatt vad?
 
 - Platon (*Euthyfron*, *Sokrates försvarstal*, *Kriton*, *Faidon*) och Epiktetos (*Handboken*): Claude Opus 5.5 (Anthropic), direkt från grekiskan med äldre engelsk översättning som stöd.
-- Aristoteles (*Kategorierna*): Claude Opus 5.5 (Anthropic), direkt från grekiskan och kontrollerad mot Owens engelska (1853), med terminologi efter Mikael Lindéns översättning av Metafysiken.
+- Aristoteles (*Kategorierna* och *Om tolkningen*): Claude Opus 5.5 (Anthropic), direkt från grekiskan och kontrollerad mot Owens engelska (1853), med terminologi efter Mikael Lindéns översättning av Metafysiken. *Om tolkningen* följer också terminologin i seriens *Kategorierna*.
+- Marcus Aurelius (*Självbetraktelser*): Claude Opus 5.5 (Anthropic), direkt från grekiskan och kontrollerad mot C. R. Haines engelska (1916). Stoisk terminologi samordnad med Epiktetos *Handboken*.
 - *Försokratikerna*: ChatGPT 6.1 (OpenAI). För tio av de arton tänkarna är översättningen gjord från John Burnets engelska översättning (1920), alltså via engelskan. För de övriga från den grekiska eller latinska texten med äldre översättningar som stöd. Varje fragment anger vad det bygger på.
 
 ## Så gick det till
@@ -20,7 +21,7 @@ Alla texter på webbplatsen har översatts av en språkmodell, inte av en mänsk
 2. **Engelskt stöd.** Den grekiska texten parades ihop, sida för sida, med en äldre engelsk översättning som är fri från upphovsrätt. Den engelska texten är bara ett stöd för förståelsen; översättningen görs från grekiskan. Undantaget är de försokratiker som översatts från Burnets engelska, se ovan.
 3. **Fast terminologi.** En ordlista med bärande begrepp (till exempel ψυχή – själ, φρόνησις – insikt, οὐσία – väsen, εἶδος – form) gavs till modellen så att samma grekiska ord översätts på samma sätt genom hela texten. Försokratikerna har en egen ordlista, som finns sist i boken.
 4. **Översättning avsnitt för avsnitt.** Modellen översatte en Stephanus-sida, ett kapitel eller ett fragment i taget och fick inte utelämna eller lägga till något.
-5. **Granskning.** Varje text läses igenom av en människa innan den publiceras. Rättelser tas in i nya utgåvor.
+5. **Granskning.** Böckerna är publicerade som tydligt märkta granskningsexemplar och ännu inte externt fackgranskade. Läsare kan rapportera fel, och rättelser tas in i nya utgåvor.
 
 ## Varför
 

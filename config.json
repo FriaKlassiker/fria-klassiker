@@ -144,5 +144,43 @@
       "isbn_pdf": "",
       "ingress": "De fyra dialogerna följer Sokrates från anklagelsen till döden: Euthyfron vid kungens pelargång när han ska ta emot anklagelsen, Försvarstalet vid domstolen, Kriton i fängelset några dagar före avrättningen och Faidon på den sista dagen. Redan i antiken lästes de som en tetralogi, och de är fortfarande den mest lästa ingången till Platon och till den sokratiska filosofin."
     }
+  ],
+  "importerade_verk": [
+    {
+      "id": "omtolkningen",
+      "typ": "epub_import",
+      "forfattare": "Aristoteles",
+      "titel": "Om tolkningen",
+      "originaltitel": "Περὶ ἑρμηνείας (Peri hermēneias)",
+      "refsystem": "avsnitt",
+      "granskad": false,
+      "modell": "Claude Opus 5.5",
+      "modelltillverkare": "Anthropic",
+      "oversattningsmanad": "november 2026",
+      "grekiska": "Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, via Open Greek and Latin / First1KGreek",
+      "engelska": "Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853",
+      "ai_metod": "AI-översatt direkt från grekiskan, kontrollerad mot Owen 1853; terminologi efter Mikael Lindéns Metafysik och Fria klassikers Kategorierna.",
+      "ingress": "Den andra skriften i Aristoteles Organon. Om namn, verb och påståenden, motsägelsers sanning och framtidens möjligheter. I kapitel 9 behandlas det klassiska exemplet om ett sjöslag i morgon.",
+      "isbn_epub": "",
+      "isbn_pdf": ""
+    },
+    {
+      "id": "sjalvbetraktelser",
+      "typ": "epub_import",
+      "forfattare": "Marcus Aurelius",
+      "titel": "Självbetraktelser",
+      "originaltitel": "Τὰ εἰς ἑαυτόν (Ta eis heauton)",
+      "refsystem": "avsnitt",
+      "granskad": false,
+      "modell": "Claude Opus 5.5",
+      "modelltillverkare": "Anthropic",
+      "oversattningsmanad": "november 2026",
+      "grekiska": "Jan Hendrik Leopold (red.), M. Antoninus Imperator Ad se ipsum, 1908, via Perseus Digital Library",
+      "engelska": "C. R. Haines, The Communings with Himself of Marcus Aurelius Antoninus, London 1916 (Wikisource)",
+      "ai_metod": "AI-översatt direkt från grekiskan, kontrollerad mot Haines 1916; terminologi efter Epiktetos Handboken i samma serie.",
+      "ingress": "Den romerske kejsarens privata anteckningar, skrivna på grekiska. Tolv böcker med stoiska tankar om förnuft och plikt, gemenskap, livets förgänglighet och konsten att styra sitt eget omdöme.",
+      "isbn_epub": "",
+      "isbn_pdf": ""
+    }
   ]
 }
