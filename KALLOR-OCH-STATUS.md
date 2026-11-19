@@ -22,6 +22,17 @@ innehåller 153 avsnitt, cirka 40 321 grekiska ord, 52 810 engelska ord och
   Burnet-baserade svenska poster får inte beskrivas som direktöversättningar
   från grekiskan.
 
+För de fyra huvudverken har hela den grekiska textströmmen kontrollerats mot
+Perseus revision `dacb04909e43dc47738828d33cc3d2b0635bc54c`. Efter normalisering
+av bokstavsform och skiljetecken, och exkludering av redaktionella
+`del`/`bibl`/`note`-element, överensstämmer hela texten i samtliga fyra verk.
+Detta är en maskinell källkontroll, inte en filologisk granskning.
+
+Sidpaketen har delvis andra styckegränser än TEI-utgåvans sidindelning.
+Exakta Stephanus-bokstäver och citatgränser ska därför kontrolleras i
+originalet. Kitets etikett Oxford 1903 har för de tre Platondialogerna
+ersatts med den kontrollerade TEI-källans metadata, Oxford 1905.
+
 ## Losacco-uppgiften
 
 Checklistans tidigare oklarhet om Michele Losaccos dödsår har utretts.

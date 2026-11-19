@@ -8,9 +8,9 @@ Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 
 | Verk | Källa (grekiska) | Stöd (engelska) |
 |---|---|---|
-| Platon: Sokrates försvarstal | Burnet 1903 (Perseus) | Fowler 1914 |
-| Platon: Kriton | Burnet 1903 (Perseus) | Fowler 1914 |
-| Platon: Faidon | Burnet 1903 (Perseus) | Fowler 1914 |
+| Platon: Sokrates försvarstal | Burnet (Perseus; TEI-metadata 1905) | Fowler 1914 |
+| Platon: Kriton | Burnet (Perseus; TEI-metadata 1905) | Fowler 1914 |
+| Platon: Faidon | Burnet (Perseus; TEI-metadata 1905) | Fowler 1914 |
 | Epiktetos: Handboken | Schenkl 1916 (Perseus) | Long 1890 |
 | *Sokrates sista dagar* (samlingsvolym: de tre Platondialogerna) | | |
 | *Försokratikerna* (805 fragment och vittnesmål, 18 tänkare) | Diels 1903–1922 (The Presocratic Reader) | Burnet 1920 m.fl.; tio tänkare översatta via Burnets engelska |

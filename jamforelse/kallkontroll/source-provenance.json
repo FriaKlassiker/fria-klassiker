@@ -1,0 +1,38 @@
+[
+  {
+    "work": "forsvarstalet",
+    "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/dacb04909e43dc47738828d33cc3d2b0635bc54c/data/tlg0059/tlg002/tlg0059.tlg002.perseus-grc2.xml",
+    "revision": "dacb04909e43dc47738828d33cc3d2b0635bc54c",
+    "sha256": "ca0a81e96e866bdb32fecbf0f94033d986c4fb45febbab22cab8e0e393273653",
+    "edition_date": "1905",
+    "publisher": "Clarendon Press",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "work": "kriton",
+    "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/dacb04909e43dc47738828d33cc3d2b0635bc54c/data/tlg0059/tlg003/tlg0059.tlg003.perseus-grc2.xml",
+    "revision": "dacb04909e43dc47738828d33cc3d2b0635bc54c",
+    "sha256": "8083e9b4dadf7d7e49ed0f6ea5ce787bffcc1ea1d3a5f329e795f129b4450701",
+    "edition_date": "1905",
+    "publisher": "Clarendon Press",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "work": "faidon",
+    "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/dacb04909e43dc47738828d33cc3d2b0635bc54c/data/tlg0059/tlg004/tlg0059.tlg004.perseus-grc2.xml",
+    "revision": "dacb04909e43dc47738828d33cc3d2b0635bc54c",
+    "sha256": "f7e26d7d4126e46f6546600ae9ad445836814fad8c3551e1a5b0f454f3e9e1a6",
+    "edition_date": "1905",
+    "publisher": "Clarendon Press",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "work": "epiktetos",
+    "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/dacb04909e43dc47738828d33cc3d2b0635bc54c/data/tlg0557/tlg002/tlg0557.tlg002.perseus-grc2.xml",
+    "revision": "dacb04909e43dc47738828d33cc3d2b0635bc54c",
+    "sha256": "385d87958e5288fe380583d0925587bb20d47f4e2e348a8013b666fe459b6bf6",
+    "edition_date": "1916",
+    "publisher": "Teubner",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+]

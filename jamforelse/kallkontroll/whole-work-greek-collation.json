@@ -1,0 +1,30 @@
+[
+  {
+    "work": "forsvarstalet",
+    "complete_normalized_text_identical": true,
+    "supplied_characters": 42583,
+    "canonical_characters": 42583,
+    "normalization": "NFC/casefold, letters/digits, del/bibl/note omitted; source chunk boundaries ignored"
+  },
+  {
+    "work": "kriton",
+    "complete_normalized_text_identical": true,
+    "supplied_characters": 20041,
+    "canonical_characters": 20041,
+    "normalization": "NFC/casefold, letters/digits, del/bibl/note omitted; source chunk boundaries ignored"
+  },
+  {
+    "work": "faidon",
+    "complete_normalized_text_identical": true,
+    "supplied_characters": 105095,
+    "canonical_characters": 105095,
+    "normalization": "NFC/casefold, letters/digits, del/bibl/note omitted; source chunk boundaries ignored"
+  },
+  {
+    "work": "epiktetos",
+    "complete_normalized_text_identical": true,
+    "supplied_characters": 24754,
+    "canonical_characters": 24754,
+    "normalization": "NFC/casefold, letters/digits, del/bibl/note omitted; source chunk boundaries ignored"
+  }
+]
