@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "Om du använder texterna, ange källan så här."
+title: "Fria klassiker: Platon, Epiktetos och försokratikerna i svensk AI-översättning"
+version: "0.9"
+license: CC-BY-SA-4.0
+type: dataset
+authors:
+  - family-names: Vesterlund
+    given-names: David
+    affiliation: "Vesterlund Ventures Holding AB"
+abstract: >-
+  Svenska AI-översättningar från grekiskan av Platons Sokrates försvarstal, Kriton och Faidon
+  samt Epiktetos Handbok, gjorda med språkmodellen Claude Opus 5.5 (Anthropic) med äldre engelska
+  översättningar som stöd. Granskningsversion; mänsklig sakgranskning är inte bekräftad. Innehåller även ett parallellt
+  korpus (grekiska–engelska–svenska per Stephanus-sida) för utvärdering av översättningsmodeller,
+  samt Försokratikerna (805 fragment och vittnesmål) översatta av ChatGPT 6.1 (OpenAI).
+keywords:
+  - Platon
+  - Epiktetos
+  - antik filosofi
+  - svensk översättning
+  - maskinöversättning
+  - parallellkorpus
+references:
+  - type: data
+    title: "Perseus Digital Library, canonical-greekLit"
+    authors:
+      - name: "Perseus Digital Library, Tufts University"
+    url: "https://github.com/PerseusDL/canonical-greekLit"
+    license: CC-BY-SA-4.0
+  - type: data
+    title: "The Presocratic Reader"
+    authors:
+      - family-names: Bîsceanu
+        given-names: Sergiu Alexandru
+    url: "https://github.com/sergiubisceanu/presocratic-reader"
+    license: CC-BY-SA-4.0

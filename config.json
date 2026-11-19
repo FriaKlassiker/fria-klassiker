@@ -1,0 +1,111 @@
+{
+  "serie": "Fria klassiker",
+  "undertitel": "Antik filosofi på svenska – fritt att läsa, kopiera och dela",
+  "version": "0.9",
+  "datum": "2026-11-19",
+  "granskad": false,
+  "granskare": "David Vesterlund",
+  "utgivare": "Vesterlund Ventures Holding AB, Bankeryd",
+  "ort": "Bankeryd",
+  "modell": "Claude Opus 5.5",
+  "modelltillverkare": "Anthropic",
+  "oversattningsmanad": "november 2026",
+  "kontakt_epost": "",
+  "repo_url": "https://github.com/VesterlundCoder/fria-klassiker",
+  "site_url": "https://vesterlundcoder.github.io/fria-klassiker/",
+  "doi": "",
+  "verk": [
+    {
+      "id": "forsvarstalet",
+      "fil": "forsvarstalet.md",
+      "forfattare": "Platon",
+      "titel": "Sokrates försvarstal",
+      "originaltitel": "Ἀπολογία Σωκράτους (Apologia Sōkratous)",
+      "refsystem": "stephanus",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1903, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Våren 399 f.Kr. står Sokrates, sjuttio år gammal, inför en folkdomstol i Aten, anklagad för att inte erkänna stadens gudar och för att fördärva ungdomen. Platon var närvarande vid rättegången. Talet består av tre delar: själva försvaret, Sokrates motförslag till straff efter att han fällts, och hans avslutande ord till domarna efter dödsdomen."
+    },
+    {
+      "id": "kriton",
+      "fil": "kriton.md",
+      "forfattare": "Platon",
+      "titel": "Kriton",
+      "originaltitel": "Κρίτων (Kritōn)",
+      "refsystem": "stephanus",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1903, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Några dagar före avrättningen besöker vännen Kriton Sokrates i fängelset i gryningen. Flykten är ordnad och pengarna finns. Sokrates vägrar och prövar i stället frågan om det någonsin kan vara rätt att göra orätt tillbaka. Dialogen slutar med att Atens lagar själva får ordet."
+    },
+    {
+      "id": "faidon",
+      "fil": "faidon.md",
+      "forfattare": "Platon",
+      "titel": "Faidon",
+      "originaltitel": "Φαίδων (Phaidōn)",
+      "refsystem": "stephanus",
+      "grekiska": "John Burnet (red.), Platonis Opera, vol. 1, Oxford 1903, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "Harold North Fowler, Plato I, Loeb Classical Library, 1914 (fri från upphovsrätt)",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Faidon, som var med i fängelset, berättar för Ekekrates i Fleius om Sokrates sista dag. Samtalet med Simmias och Kebes handlar om själen: om filosofen bör frukta döden, om själen fanns före kroppen och om den är odödlig. Här lägger Platon fram sin formlära i utförlig form. Dialogen slutar med en myt om jordens inre och med skildringen av Sokrates död."
+    },
+    {
+      "id": "handboken",
+      "fil": "handboken.md",
+      "forfattare": "Epiktetos",
+      "titel": "Handboken",
+      "originaltitel": "Ἐγχειρίδιον (Encheiridion)",
+      "refsystem": "kapitel",
+      "grekiska": "Heinrich Schenkl (red.), Epicteti Dissertationes ab Arriano digestae, Leipzig 1916, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "George Long, The Discourses of Epictetus with the Encheiridion and Fragments, 1890 (fri från upphovsrätt)",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Epiktetos (ca 50–135 e.Kr.) föddes som slav och blev en av de mest lästa stoiska lärarna. Han skrev själv ingenting. Hans elev Arrianos tecknade ned undervisningen och sammanfattade dess kärna i denna korta handbok. Den börjar med skillnaden mellan det som står i vår makt och det som inte gör det."
+    },
+    {
+      "id": "forsokratikerna",
+      "typ": "fragment",
+      "fil": "forsokratiker.json",
+      "forfattare": "Herakleitos, Parmenides, Empedokles m.fl.",
+      "titel": "Försokratikerna",
+      "originaltitel": "Die Fragmente der Vorsokratiker (Hermann Diels) och Early Greek Philosophy (John Burnet), i urval",
+      "refsystem": "fragment",
+      "modell": "ChatGPT 6.1",
+      "modelltillverkare": "OpenAI",
+      "oversattningsmanad": "november 2026",
+      "undertitel": "Fragment och vittnesmål · AI-översättning",
+      "omslag_rad": "Fragment och vittnesmål",
+      "ai_metod": "Texterna har översatts av språkmodellen {modell} i {manad}. För Thales, Pythagoras, Xenofanes, Herakleitos, Parmenides, Zenon, Melissos, Empedokles, Anaxagoras och Diogenes är översättningen gjord från John Burnets engelska översättning i Early Greek Philosophy (1920), alltså via engelskan och inte direkt från grekiskan. För Ferekydes, Anaximandros, Anaximenes, Alkmaion, Filolaos, Archytas, Leukippos och Demokritos har den grekiska eller latinska texten i Diels utgåva använts tillsammans med äldre engelska, tyska, franska eller italienska översättningar. Vid varje post står vad den bygger på.",
+      "grundtext": "Grekisk och latinsk text efter Hermann Diels, Die Fragmente der Vorsokratiker (1903, 1906, 1912 och 1922), i den digitala återgivningen i The Presocratic Reader av Sergiu Alexandru Bîsceanu (CC BY-SA 4.0), med transkriptioner från Open Greek and Latin / First1KGreek, Forage och Perseus Digital Library (CC BY-SA 4.0). Burnet-avsnitten: John Burnet, Early Greek Philosophy, tredje upplagan, London 1920 (fri från upphovsrätt), efter Wikisource.",
+      "kolofon_kallor": [
+        "Grundtext: Hermann Diels, Die Fragmente der Vorsokratiker (1903–1922), i digital återgivning från The Presocratic Reader (Sergiu Alexandru Bîsceanu), med transkriptioner från Open Greek and Latin / First1KGreek, Forage och Perseus Digital Library.",
+        "Burnet-avsnitten är översatta från John Burnet, Early Greek Philosophy, tredje upplagan (London 1920), fri från upphovsrätt.",
+        "Äldre stödöversättningar, alla fria från upphovsrätt, anges vid varje post och i förteckningen Källor."
+      ],
+      "licens_kalla": "Grundtexten och dess digitala återgivning används under samma licens, med erkännande till The Presocratic Reader (Sergiu Alexandru Bîsceanu), Open Greek and Latin / First1KGreek, Forage och Perseus Digital Library.",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Försokratikerna kallas de grekiska tänkare som verkade före eller samtidigt med Sokrates, från Thales och Anaximandros i Miletos på 500-talet f.Kr. till Demokritos. De frågade vad allt är gjort av, hur förändring är möjlig och vad som kan vetas. Nästan inget av deras skrifter finns bevarat. Det vi har är fragment: citat och referat hos senare författare som Aristoteles, Sextus Empiricus, Klemens av Alexandria och Simplikios. Den här utgåvan samlar 805 sådana poster från arton tänkare: fragment, vittnesmål och titlar på förlorade verk."
+    }
+  ],
+  "samlingar": [
+    {
+      "id": "sokrates-sista-dagar",
+      "titel": "Sokrates sista dagar",
+      "forfattare": "Platon",
+      "delar": [
+        "forsvarstalet",
+        "kriton",
+        "faidon"
+      ],
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "De tre dialogerna följer Sokrates från rättegången till döden: Försvarstalet vid domstolen, Kriton i fängelset några dagar före avrättningen och Faidon på den sista dagen. Tillsammans är de den mest lästa ingången till Platon och till den sokratiska filosofin."
+    }
+  ]
+}

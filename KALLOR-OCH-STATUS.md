@@ -1,0 +1,58 @@
+# Källor och status för granskningsversionen
+
+Denna utgåva är en AI-framställd granskningsversion. Varken en
+klassikergranskning eller en fullständig mänsklig sakgranskning har bekräftats.
+ISBN och DOI lämnas tomma tills verkliga identifierare har tilldelats.
+
+Modellnamnen Claude Opus 5.5 och ChatGPT 6.1 återger uppgifter i det levererade
+underlaget. De har inte verifierats mot råa API-loggar. De fyra parallellfilerna
+innehåller 153 avsnitt, cirka 40 321 grekiska ord, 52 810 engelska ord och
+50 927 svenska ord. Fragmentutgåvan innehåller ytterligare 805 poster.
+
+## Grekiska texter och digitala transkriptioner
+
+- Perseus Digital Library, Tufts University:
+  https://github.com/PerseusDL/canonical-greekLit
+- Licens: repositoryts `license.md` anger CC BY-SA 4.0.
+- The Presocratic Reader, Sergiu Alexandru Bîsceanu:
+  https://github.com/sergiubisceanu/presocratic-reader
+- Dess `site/licences.txt` skiljer textdata/transkriptioner under CC BY-SA 4.0
+  från historiska översättningar, som behåller sin angivna status.
+- Individuella källor och översättningsvägar finns i `texter/forsokratiker.json`.
+  Burnet-baserade svenska poster får inte beskrivas som direktöversättningar
+  från grekiskan.
+
+## Losacco-uppgiften
+
+Checklistans tidigare oklarhet om Michele Losaccos dödsår har utretts.
+Stefano Miccolis artikel i *Dizionario Biografico degli Italiani*, vol. 66
+(Treccani, 2006), anger att Losacco dog den 10 mars **1944**:
+
+https://www.treccani.it/enciclopedia/michele-losacco_(Dizionario-Biografico)/
+
+Detta placerar den namngivna historiska översättaren utanför den vanliga
+livstid-plus-70-årsperioden. Det är inte en garanti om varje senare utgåva
+eller varje jurisdiktion. De två berörda posterna är DK 7 B 1a och DK 7 B 6.
+
+## Publicering och modellträning är olika frågor
+
+CC-licensen för antika texter och digitala transkriptioner avgör inte i sig vilka
+avtalsvillkor som gäller för AI-genererade referensöversättningar.
+OpenAI och Anthropic beskriver ägande av output, men har också begränsningar
+för användning av output till konkurrerande modeller. Exakt tillämpligt avtal,
+kontotyp och tillåtet användningsfall måste bedömas separat. Den lokala
+specialiserade adapterstudien är inte ett besked om generell rätt att distribuera
+träningsmodeller under textlicensen.
+
+- https://openai.com/policies/row-terms-of-use/
+- https://www.anthropic.com/legal/commercial-terms
+- https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model
+
+Ingen automatisk publicering av modellvikter ingår i detta bokrepo.
+Den separata ordlistan från Lindéns *Metafysik* har inte kopierats hit eller
+använts som ett fristående träningsdataset.
+
+## Typsnitt
+
+Cardo av David J. Perry används under SIL Open Font License 1.1.
+Fontfiler och full licens finns i `mallar/fonts/`.

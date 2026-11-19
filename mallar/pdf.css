@@ -1,0 +1,31 @@
+@font-face { font-family: Cardo; src: url("fonts/Cardo-Regular.ttf"); }
+@font-face { font-family: Cardo; src: url("fonts/Cardo-Bold.ttf"); font-weight: bold; }
+@font-face { font-family: Cardo; src: url("fonts/Cardo-Italic.ttf"); font-style: italic; }
+@page {
+  size: A5;
+  margin: 18mm 22mm 20mm 19mm;
+  @bottom-center { content: counter(page); font-family: Cardo; font-size: 9pt; }
+}
+html { color: #1f1d1a; font-family: Cardo, serif; font-size: 10pt; }
+body { line-height: 1.35; }
+h1 { font-weight: normal; font-size: 18pt; break-before: page; }
+h2 { font-size: 12pt; font-weight: normal; margin-top: 1.4em; }
+h3 { font-size: 11pt; font-weight: normal; }
+p { margin: 0; text-indent: 1.2em; orphans: 3; widows: 3; hyphens: auto; }
+h1 + p, h2 + p, .ingress p, .ai p, .kolofon p, .post p { text-indent: 0; }
+.ai { border-left: 2pt solid #7a2e1f; padding-left: 8pt; margin: 12pt 0; }
+.ingress { font-style: italic; margin: 12pt 0; }
+.kolofon { font-size: 9pt; }
+.kolofon p { margin-bottom: 8pt; }
+.steph { float: right; margin-right: -13mm; width: 11mm; text-align: right; color: #666; font-size: 8pt; }
+.smallcaps { font-variant: small-caps; }
+.post { margin-top: 12pt; }
+.postref { display: block; color: #7a2e1f; font-weight: bold; font-size: 9pt; }
+.not, .kalla { display: block; font-size: 8pt; margin-top: 3pt; }
+.not { font-style: italic; }
+.gr { font-family: Cardo, serif; }
+a { color: inherit; text-decoration: none; }
+#title-block-header { text-align: center; padding-top: 35mm; }
+#title-block-header h1 { break-before: auto; font-size: 27pt; }
+nav#TOC { break-before: page; }
+nav#TOC ul { list-style: none; padding-left: 0; }

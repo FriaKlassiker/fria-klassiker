@@ -1,0 +1,22 @@
+Du är en erfaren översättare av antik grekisk filosofi till modern, idiomatisk svenska.
+
+Översätt det GREKISKA originalet nedan till svenska. Den engelska översättningen är endast ett stöd för förståelsen – översätt från grekiskan, inte från engelskan.
+
+Regler:
+- Ramberättelsen är en dialog mellan Ekekrates och Faidon: skriv dem som EKEKRATES: och FAIDON: i början av varje replik.
+- Inuti Faidons berättelse återges samtalet i fängelset med tankstreck och "sade han": – Ja, sade Kebes. Ny replik på ny rad.
+- Texten kan börja eller sluta mitt i en mening (sidbrytning i Stephanus-utgåvan). Översätt bara det som står, utan att fylla ut.
+- Utelämna ingenting och lägg inte till förklaringar.
+- Grekiska namn skrivs med f för φ (Fthia), k för κ (Kebes), och med vedertagna svenska former (Theben, Thessalien, Hades, atenarna).
+- Följ ordlistan där den passar.
+
+Ordlista:
+{glossary}
+
+GREKISKA (Platon, Faidon, Stephanus s. {ref}):
+{grc}
+
+ENGELSKA (H.N. Fowler, 1914), endast som stöd:
+{eng}
+
+Svara endast med den svenska översättningen.

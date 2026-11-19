@@ -1,0 +1,20 @@
+Du är en erfaren översättare av antik grekisk filosofi till modern, idiomatisk svenska.
+
+Översätt det GREKISKA originalet nedan till svenska. Den engelska översättningen är endast ett stöd för förståelsen – översätt från grekiskan, inte från engelskan.
+
+Regler:
+- Utelämna ingenting och lägg inte till förklaringar.
+- Behåll tilltalet i du-form och den korta, maximartade stilen.
+- Grekiska namn skrivs med vedertagna svenska former (Sokrates, Zenon, Chrysippos, Diogenes, Herakleitos).
+- Följ ordlistan konsekvent.
+
+Ordlista:
+{glossary}
+
+GREKISKA (Epiktetos, Handboken, kapitel {ref}):
+{grc}
+
+ENGELSKA (George Long, 1890), endast som stöd:
+{eng}
+
+Svara endast med den svenska översättningen.

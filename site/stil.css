@@ -1,0 +1,50 @@
+/* Gemensam stil för webbplats och EPUB */
+:root { --text:#1f1d1a; --mjuk:#6b6560; --linje:#ddd6cc; --bg:#fbf9f5; --accent:#7a2e1f; }
+html { background: var(--bg); }
+body { color: var(--text); font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "TeX Gyre Pagella", Georgia, serif;
+  line-height: 1.6; margin: 0; }
+main, .bred { max-width: 38rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+h1, h2, h3 { font-weight: normal; line-height: 1.25; }
+h1 { font-size: 1.9rem; margin: 2.5rem 0 .25rem; }
+h2 { font-size: 1.25rem; margin: 2.2rem 0 .6rem; }
+h3 { font-size: 1.05rem; font-style: italic; margin: 1.8rem 0 .4rem; }
+p { margin: 0; text-indent: 1.2em; hyphens: auto; -webkit-hyphens: auto; }
+h1 + p, h2 + p, h3 + p, .ingress p, .ai p, .kolofon p, .noindent p, p.noindent { text-indent: 0; }
+.ingress, .ai, .kolofon { margin: 1.2rem 0; }
+.ingress p + p, .ai p + p, .kolofon p + p { margin-top: .6em; }
+.ingress { font-style: italic; }
+.ai { border: 1px solid var(--linje); border-left: 4px solid var(--accent); background: #fff; padding: .9rem 1.1rem; font-size: .95rem; }
+.ai strong { color: var(--accent); }
+.kolofon { font-size: .85rem; color: var(--mjuk); }
+.steph { float: right; margin-right: -2.6rem; width: 2rem; text-align: right; font-size: .75rem; color: var(--mjuk);
+  font-style: normal; text-indent: 0; user-select: none; }
+.smallcaps { font-variant: small-caps; letter-spacing: .03em; }
+.utkast { background: #fff3cd; color: #6b4e00; text-align: center; font-size: .85rem; padding: .4rem; font-family: system-ui, sans-serif; }
+a { color: var(--accent); }
+/* Webbplatsens ramverk */
+header.topp { border-bottom: 1px solid var(--linje); font-family: system-ui, -apple-system, sans-serif; font-size: .9rem; }
+header.topp .bred { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; align-items: baseline; padding: .9rem 1.25rem; }
+header.topp .namn { font-family: inherit; font-weight: 600; color: var(--text); text-decoration: none; margin-right: auto; }
+header.topp a { text-decoration: none; }
+footer.fot { border-top: 1px solid var(--linje); font-family: system-ui, sans-serif; font-size: .8rem; color: var(--mjuk); }
+footer.fot .bred { padding: 1.25rem; }
+.kort { border-top: 1px solid var(--linje); padding: 1.1rem 0; }
+.kort h2 { margin: 0 0 .2rem; }
+.kort .forf { color: var(--mjuk); font-size: .9rem; margin: 0; text-indent: 0; }
+.kort p { text-indent: 0; }
+.knappar { margin-top: .6rem; display: flex; gap: .5rem; flex-wrap: wrap; font-family: system-ui, sans-serif; font-size: .85rem; }
+.knappar a { border: 1px solid var(--linje); border-radius: 4px; padding: .3rem .7rem; text-decoration: none; background: #fff; }
+.prosa p { text-indent: 0; margin: 0 0 .8em; }
+@media (max-width: 46rem) { .steph { float: none; display: inline-block; margin: 0 .4rem 0 0; width: auto; }
+  .steph::before { content: "["; } .steph::after { content: "]"; } }
+/* Fragmentsamlingar */
+.post { margin: 1.1rem 0 0; }
+.post p { text-indent: 0; margin: 0 0 .35em; }
+.postref { display: block; font-family: system-ui, -apple-system, sans-serif; font-size: .78rem; font-weight: 600;
+  letter-spacing: .02em; color: var(--accent); margin-bottom: .15rem; }
+.not { display: block; font-size: .88rem; font-style: italic; }
+.kalla { display: block; font-size: .72rem; color: var(--mjuk); font-family: system-ui, sans-serif; }
+.tankarnav { display: flex; flex-wrap: wrap; gap: .3rem .8rem; font-family: system-ui, sans-serif; font-size: .85rem;
+  border-top: 1px solid var(--linje); border-bottom: 1px solid var(--linje); padding: .6rem 0; margin: 1.2rem 0; }
+.tankarnav a { text-decoration: none; }
+dl dt { font-weight: 600; margin-top: .6rem; } dl dd { margin: 0 0 0 1.2rem; }

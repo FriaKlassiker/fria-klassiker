@@ -1,0 +1,41 @@
+{
+  "title": "Fria klassiker: Platon, Epiktetos och försokratikerna i svensk AI-översättning (utgåva 0.9)",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "description": "<p>Svenska AI-översättningar från grekiskan av Platons <em>Sokrates försvarstal</em>, <em>Kriton</em> och <em>Faidon</em> samt Epiktetos <em>Handboken</em>, som EPUB, PDF och webbsidor. Enligt levererat underlag är de gjorda med Claude Opus 5.5 (Anthropic), med äldre engelska översättningar som stöd (Fowler 1914, Long 1890). Detta är en granskningsversion; mänsklig sakgranskning är inte bekräftad.</p><p>Dessutom <em>Försokratikerna</em>: 805 fragment och vittnesmål från arton tänkare, enligt underlaget översatta av ChatGPT 6.1 (OpenAI) från den grekiska eller latinska texten i Diels utgåva (via The Presocratic Reader) eller, för tio tänkare, från John Burnets engelska översättning (1920).</p><p>Arkivet innehåller också ett parallellt korpus med prompter och utvärderingsskript. Modellnamnen är uppgifter från underlaget, inte oberoende verifierade API-loggar.</p><p>Grekisk text: Perseus Digital Library, Tufts University; The Presocratic Reader (Sergiu Alexandru Bîsceanu); Open Greek and Latin / First1KGreek; Forage (CC BY-SA 4.0).</p>",
+  "creators": [
+    {
+      "name": "Vesterlund, David",
+      "affiliation": "Vesterlund Ventures Holding AB"
+    }
+  ],
+  "license": "cc-by-sa-4.0",
+  "language": "swe",
+  "access_right": "open",
+  "version": "0.9",
+  "keywords": [
+    "Platon",
+    "Epiktetos",
+    "antik filosofi",
+    "svensk översättning",
+    "AI-översättning",
+    "maskinöversättning",
+    "parallellkorpus",
+    "försokratiker",
+    "Herakleitos",
+    "Demokritos"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/PerseusDL/canonical-greekLit",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://github.com/sergiubisceanu/presocratic-reader",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset"
+    }
+  ],
+  "notes": "Alla texter är AI-översättningar. Granskningsversion; mänsklig sakgranskning är inte bekräftad. Inga ISBN eller DOI har tilldelats denna utgåva ännu."
+}

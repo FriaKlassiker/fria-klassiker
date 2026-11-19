@@ -1,0 +1,23 @@
+\usepackage{xcolor}
+\definecolor{stephgra}{gray}{0.45}
+\newcommand{\steph}[1]{\marginpar{\raggedright\footnotesize\color{stephgra}#1}}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.2em}
+\addtokomafont{disposition}{\rmfamily\mdseries}
+\addtokomafont{chapter}{\Large}
+\addtokomafont{section}{\normalsize\itshape}
+\RedeclareSectionCommand[beforeskip=1.4\baselineskip,afterskip=0.6\baselineskip]{section}
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\small\headmark}
+\ofoot*{\small\pagemark}
+\automark[chapter]{chapter}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\newfontfamily\grfont{Cardo}[Scale=MatchLowercase]
+\newcommand{\postref}[1]{\par\addvspace{0.9\baselineskip}\noindent{\small\sffamily\bfseries\color{stephgra}#1}\par\nopagebreak\noindent\ignorespaces}
+\newcommand{\postnot}[1]{\par\noindent{\small\itshape #1}\par}
+\newcommand{\postkalla}[1]{\par\noindent{\scriptsize\color{stephgra}#1}\par}
+\usepackage{etoolbox}
+\AtBeginEnvironment{description}{\small}
