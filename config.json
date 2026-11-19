@@ -90,18 +90,65 @@
       "modell": "Claude Opus 5.5",
       "modelltillverkare": "Anthropic",
       "oversattningsmanad": "november 2026",
-      "ai_metod": "Texten har översatts direkt från grekiskan av språkmodellen {modell} i {manad} och därefter kontrollerats mot en äldre engelsk översättning (Octavius Freire Owen, 1853). Terminologin följer Mikael Lindéns svenska översättning av Aristoteles Metafysik, så att till exempel ousia återges med väsen, poion med beskaffenhet och symbebêkos med åtföljande.",
+      "ai_metod": "Texten har enligt underlaget översatts direkt från grekiskan av språkmodellen {modell} i {manad} och därefter kontrollerats mot en äldre engelsk översättning (Octavius Freire Owen, 1853). Terminologin är inspirerad av Jan-Ivar Lindéns svenska översättning av Aristoteles Metafysik, så att till exempel ousia återges med väsen, poion med beskaffenhet och symbebêkos med åtföljande.",
       "grekiska": "Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, digital utgåva i Open Greek and Latin / First1KGreek (University of Leipzig), CC BY-SA 4.0",
       "engelska": "Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt)",
       "kolofon_kallor": [
         "Grekisk text: Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, i digital utgåva från Open Greek and Latin / First1KGreek (University of Leipzig).",
         "Engelsk kontrollöversättning: Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt).",
-        "Terminologin följer Mikael Lindéns översättning av Metafysiken; ingen text ur den har återgivits."
+        "Terminologin är enligt underlaget inspirerad av Jan-Ivar Lindéns översättning av Metafysiken; ingen text ur den återges."
       ],
       "licens_kalla": "Den grekiska texten kommer från Open Greek and Latin / First1KGreek, University of Leipzig, under samma licens.",
       "isbn_epub": "",
       "isbn_pdf": "",
       "ingress": "Kategorierna är den första skriften i Aristoteles logiska verk, Organon. Den frågar vad det är vi talar om när vi säger något om något, och delar in allt som sägs utan förbindelse i tio slag: väsen, mängd, beskaffenhet, det relativa, var, när, läge, innehav, görande och undergående. Den långa delen om väsen, med skillnaden mellan första väsen (den enskilda människan) och andra väsen (arten och släktet), har präglat hela den västerländska filosofin. Skriften avslutas med de så kallade postpraedicamenta: om motsatser, om tidigare och samtidigt, om rörelse och om att ha."
+    },
+    {
+      "id": "sjalvbetraktelser",
+      "fil": "sjalvbetraktelser.md",
+      "forfattare": "Marcus Aurelius",
+      "titel": "Självbetraktelser",
+      "originaltitel": "Τὰ εἰς ἑαυτόν (Ta eis heauton)",
+      "refsystem": "avsnitt",
+      "kapitelprefix": "Bok",
+      "modell": "Claude Opus 5.5",
+      "modelltillverkare": "Anthropic",
+      "oversattningsmanad": "november 2026",
+      "ai_metod": "Texten har enligt det levererade underlaget översatts direkt från grekiskan av språkmodellen {modell} i {manad} och kontrollerats mot C. R. Haines engelska översättning från 1916. Den stoiska terminologin följer Epiktetos Handbok i samma serie.",
+      "grekiska": "Jan Hendrik Leopold (red.), M. Antoninus Imperator Ad se ipsum, 1908, digital utgåva i Perseus Digital Library (canonical-greekLit), CC BY-SA 4.0",
+      "engelska": "C. R. Haines, The Communings with Himself of Marcus Aurelius Antoninus, Loeb Classical Library, London 1916",
+      "kolofon_kallor": [
+        "Grekisk text: Jan Hendrik Leopold (red.), M. Antoninus Imperator Ad se ipsum, 1908, i digital utgåva från Perseus Digital Library (Tufts University).",
+        "Engelsk kontrollöversättning: C. R. Haines, The Communings with Himself of Marcus Aurelius Antoninus, London 1916, efter Wikisource-utgåvan.",
+        "Citaten ur Platons Försvarstal i bok 7 följer enligt underlaget seriens egen översättning."
+      ],
+      "licens_kalla": "Den grekiska texten kommer från Perseus Digital Library under samma licens.",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Självbetraktelser är kejsar Marcus Aurelius anteckningar till sig själv, skrivna på grekiska under fälttågen vid Donau på 170-talet. Den första boken tackar dem som format honom. Resten är påminnelser om omdöme, handling, gemenskap och förgänglighet."
+    },
+    {
+      "id": "omtolkningen",
+      "fil": "om-tolkningen.md",
+      "forfattare": "Aristoteles",
+      "titel": "Om tolkningen",
+      "originaltitel": "Περὶ ἑρμηνείας (Peri hermēneias)",
+      "refsystem": "avsnitt",
+      "modell": "Claude Opus 5.5",
+      "modelltillverkare": "Anthropic",
+      "oversattningsmanad": "november 2026",
+      "ai_metod": "Texten har enligt det levererade underlaget översatts direkt från grekiskan av språkmodellen {modell} i {manad} och kontrollerats mot Octavius Freire Owens engelska översättning från 1853. Terminologin följer seriens Kategorierna och är inspirerad av Jan-Ivar Lindéns Metafysiköversättning.",
+      "grekiska": "Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, digital utgåva i Open Greek and Latin / First1KGreek, CC BY-SA 4.0",
+      "engelska": "Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853",
+      "kolofon_kallor": [
+        "Grekisk text: Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, i digital utgåva från Open Greek and Latin / First1KGreek.",
+        "Engelsk kontrollöversättning: Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853.",
+        "Terminologin är enligt underlaget inspirerad av Jan-Ivar Lindéns Metafysiköversättning; ingen text ur den återges."
+      ],
+      "licens_kalla": "Den grekiska texten kommer från Open Greek and Latin / First1KGreek under samma licens.",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Om tolkningen behandlar namn, verb och påståendesatser, jakande och nekande utsagor, motsägelser och modalitet. Kapitel 9 diskuterar framtida tillfälliga händelser genom frågan om ett sjöslag kommer att äga rum i morgon."
     },
     {
       "id": "forsokratikerna",

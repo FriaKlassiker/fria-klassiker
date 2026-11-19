@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Om du använder texterna, ange källan så här."
-title: "Fria klassiker: Platon, Epiktetos och försokratikerna i svensk AI-översättning"
+title: "Fria klassiker: antik filosofi i svensk AI-översättning – arbetsutgåvor"
 version: "0.9"
 date-released: "2026-11-19"
 license: CC-BY-SA-4.0
@@ -10,9 +10,9 @@ authors:
     given-names: David
     affiliation: "Vesterlund Ventures Holding AB"
 abstract: >-
-  Svenska AI-översättningar från grekiskan av Platons Sokrates försvarstal, Kriton och Faidon
-  samt Epiktetos Handbok, gjorda med språkmodellen Claude Opus 5.5 (Anthropic) med äldre engelska
-  översättningar som stöd, och granskade av en människa. Innehåller även ett parallellt
+  Svenska AI-översättningar av Platon, Epiktetos, Marcus Aurelius och Aristoteles,
+  enligt underlaget gjorda med Claude Opus 5.5 (Anthropic) med äldre engelska
+  översättningar som stöd. Arbetsutgåvor; mänsklig sakgranskning är inte bekräftad. Innehåller även ett parallellt
   korpus (grekiska–engelska–svenska per Stephanus-sida) för utvärdering av översättningsmodeller,
   samt Försokratikerna (805 fragment och vittnesmål) översatta av ChatGPT 6.1 (OpenAI).
 keywords:

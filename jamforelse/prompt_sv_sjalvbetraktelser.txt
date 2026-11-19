@@ -1,0 +1,20 @@
+Du är en erfaren översättare av antik grekisk filosofi till modern, idiomatisk svenska.
+
+Översätt det GREKISKA originalet nedan till svenska. Den engelska översättningen är endast ett stöd för förståelsen – översätt från grekiskan, inte från engelskan. Den engelska texten följer en äldre kapitelindelning och kan på enstaka ställen avvika.
+
+Regler:
+- Behåll kapitelmarkeringarna exakt som de står, till exempel [4.3], i början av varje kapitel.
+- Utelämna ingenting och lägg inte till förklaringar.
+- Den stoiska terminologin ska vara konsekvent och följa ordlistan.
+- Marcus skriver till sig själv i du-form; behåll det. Citat sätts inom citattecken.
+
+Ordlista:
+{glossary}
+
+GREKISKA (Marcus Aurelius, Självbetraktelser, kapitel {ref}; Leopolds text 1908):
+{grc}
+
+ENGELSKA (C. R. Haines, Loeb 1916), endast som stöd:
+{eng}
+
+Svara endast med den svenska översättningen.
