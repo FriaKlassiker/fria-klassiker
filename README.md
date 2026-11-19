@@ -13,6 +13,8 @@ Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 | Platon: Kriton | Burnet 1905 (Perseus) | Fowler 1914 |
 | Platon: Faidon | Burnet 1905 (Perseus) | Fowler 1914 |
 | Aristoteles: Kategorierna | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Lindén |
+| Aristoteles: Om tolkningen | Bekker 1837 (First1KGreek), enligt underlaget | Owen 1853 |
+| Marcus Aurelius: Självbetraktelser | Leopold 1908 (Perseus), enligt underlaget | Haines 1916 |
 | Epiktetos: Handboken | Schenkl 1916 (Perseus) | Long 1890 |
 | *Sokrates sista dagar* (samlingsvolym: de fyra Platondialogerna) | | |
 | *Försokratikerna* (805 fragment och vittnesmål, 18 tänkare) | Diels 1903–1922 (The Presocratic Reader) | Burnet 1920 m.fl.; tio tänkare översatta via Burnets engelska |
@@ -43,7 +45,9 @@ python3 build.py --bara-site
 python3 scripts/enhance_site.py  # behöver BeautifulSoup4; kör sist
 ```
 
-Kräver pandoc ≥ 3, TeX Live (xelatex, KOMA-Script, TeX Gyre Pagella, Cardo) och Pillow.
+Kräver pandoc ≥ 3, Pillow och antingen XeLaTeX eller WeasyPrint.
+Cardo-teckensnitt med OFL-licens finns i `mallar/fonts/`. Befintliga omslag
+bevaras vid ombyggnad; nya omslag använder Cardo.
 
 Så länge `"granskad": false` i `config.json` märks alla filer som granskningsexemplar och får filnamnet `-granskning`. Sätt `true` när texten är genomläst.
 

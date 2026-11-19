@@ -35,15 +35,24 @@ def text_till_md(verk):
     """Källfilen har en rad per stycke och '## N' för Stephanus-sidor eller kapitel."""
     rader = (ROT / 'texter' / verk['fil']).read_text(encoding='utf-8').splitlines()
     ut, vantande, kapitel = [], None, None
+    i_tabell = False
     for rad in rader:
         rad = rad.strip()
+        forra_tabell, i_tabell = i_tabell, rad.startswith('|')
         if not rad:
+            continue
+        if i_tabell:
+            if forra_tabell and ut and ut[-1].startswith('|'):
+                ut[-1] += '\n' + rad
+            else:
+                ut.append(rad)
             continue
         m2 = re.fullmatch(r'##\s*(\d+)\.(\d+)', rad)
         if m2 and verk['refsystem'] == 'avsnitt':
             if m2.group(1) != kapitel:
                 kapitel = m2.group(1)
-                ut.append(f'## {kapitel} {{#{verk["id"]}-{kapitel} .unnumbered}}')
+                rubrik = f'{verk["kapitelprefix"]} {kapitel}' if verk.get('kapitelprefix') else kapitel
+                ut.append(f'## {rubrik} {{#{verk["id"]}-{kapitel} .unnumbered}}')
             vantande = f'{m2.group(1)}.{m2.group(2)}'
             continue
         m = re.fullmatch(r'##\s*(\d+)', rad)
@@ -78,7 +87,7 @@ def grek_span(t):
 def granskningsmening():
     if CFG['granskad']:
         return f'Översättningen har lästs igenom och redigerats av {CFG["granskare"]}.'
-    return '**Detta är ett granskningsexemplar. Texten har ännu inte granskats av en människa.**'
+    return '**Arbetsutgåva: mänsklig sakgranskning är inte bekräftad. Ingen extern filologisk granskning har redovisats.**'
 
 
 def M(v, nyckel):
@@ -115,10 +124,14 @@ def hanvisning(verk_lista):
                      'det system som används för att hänvisa till Platons texter i alla språk.')
     if 'kapitel' in s:
         delar.append('Kapitelindelningen följer den vedertagna numreringen av Handboken.')
-    if 'avsnitt' in s:
-        delar.append('Siffrorna i marginalen anger kapitel och avsnitt enligt den digitala utgåvan i First1KGreek. '
-                     'Den vedertagna Bekkernumreringen (1a–15b) finns inte i den digitala texten och anges därför inte. '
-                     'Hakparenteser markerar ord som saknas i den digitala texten men finns i de tryckta utgåvorna.')
+    for v in verk_lista:
+        if v['refsystem'] == 'avsnitt':
+            if v['id'] == 'sjalvbetraktelser':
+                delar.append('Hänvisningarna anger bok och avsnitt i Självbetraktelser.')
+            else:
+                delar.append('Hänvisningarna anger kapitel och avsnitt enligt den digitala textutgåvan. '
+                             'Bekkernumrering har inte lagts till utan verifierat underlag. '
+                             'Hakparenteser återger angivna redaktionella kompletteringar.')
     return ' '.join(delar)
 
 
@@ -136,7 +149,7 @@ def kolofon(titel, forf, verk_lista, isbn_epub, isbn_pdf):
     rader = [
         f'{forf}: *{titel}*. Originalets titel: {orig}.',
         f'Översättning: språkmodellen {modellnamn(v0)}, {M(v0, "oversattningsmanad")}. '
-        + ('Granskning och redigering: ' + CFG['granskare'] + '.' if CFG['granskad'] else 'Granskningsexemplar, ännu inte granskat av en människa.'),
+        + ('Granskning och redigering: ' + CFG['granskare'] + '.' if CFG['granskad'] else 'Arbetsutgåva; mänsklig sakgranskning är inte bekräftad.'),
         *kallor,
         f'{CFG["serie"]}, utgåva {CFG["version"]}, {CFG["datum"]}. Utgivare: {CFG["utgivare"]}.' + (f' {isbn}.' if isbn else ''),
         'Licens: Creative Commons Erkännande-DelaLika 4.0 Internationell (CC BY-SA 4.0), '
@@ -183,8 +196,8 @@ def bok_md(bok_id, titel, forf, verk_lista, ingress, isbn_epub, isbn_pdf, fmt):
 
 def omslag(bok_id, titel, forf, ut, rad='Översatt från grekiskan'):
     from PIL import Image, ImageDraw, ImageFont
-    font = '/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-regular.otf'
-    fonti = '/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-italic.otf'
+    font = str(ROT / 'mallar/fonts/Cardo-Regular.ttf')
+    fonti = str(ROT / 'mallar/fonts/Cardo-Italic.ttf')
     if not Path(font).exists():
         import glob
         font = fonti = (glob.glob('/usr/share/fonts/**/DejaVuSerif.ttf', recursive=True) or [None])[0]
@@ -254,7 +267,10 @@ def bygg_bocker():
         fn = filnamn(bok_id)
         cover = BYGG / f'{bok_id}-omslag.jpg'
         v0 = vl[0]
-        omslag(bok_id, titel, forf, cover, v0.get('omslag_rad', 'Översatt från grekiskan'))
+        if (NED / f'{bok_id}-omslag.jpg').exists():
+            shutil.copy2(NED / f'{bok_id}-omslag.jpg', cover)
+        else:
+            omslag(bok_id, titel, forf, cover, v0.get('omslag_rad', 'Översatt från grekiskan'))
         shutil.copy(cover, NED / f'{bok_id}-omslag.jpg')
         meta = [
             '--metadata', f'title={titel}', '--metadata', f'author={forf}',
@@ -286,7 +302,16 @@ def bygg_bocker():
                    '-V', 'colorlinks=true', '-V', 'linkcolor=black', '-V', 'urlcolor=black', *meta]
         if len(vl) > 1 or v0.get('typ') == 'fragment':
             pdfargs.append('--toc')
-        pandoc(*pdfargs)
+        if shutil.which('xelatex'):
+            pandoc(*pdfargs)
+        else:
+            if not shutil.which('weasyprint'):
+                sys.exit('PDF kräver xelatex eller weasyprint.')
+            pandoc(str(src), '-f', 'markdown', '-t', 'html5', '--standalone',
+                   '-o', str(NED / f'{fn}.pdf'), '--pdf-engine=weasyprint',
+                   '--css', str(ROT / 'mallar/pdf.css'),
+                   '--lua-filter', str(ROT / 'filter/steph.lua'),
+                   '--toc', '--toc-depth=1', *meta)
         print('byggd:', fn)
 
 

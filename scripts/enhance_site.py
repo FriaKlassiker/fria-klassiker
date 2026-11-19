@@ -20,10 +20,11 @@ specials={
  'sokrates-sista-dagar':{'id':'sokrates-sista-dagar','titel':'Sokrates sista dagar','forfattare':'Platon','ingress':'Följ Sokrates från anklagelsen till den sista dagen i fängelset. De fyra dialogerna Euthyfron, Sokrates försvarstal, Kriton och Faidon samlas här i den ordning som berättelsen utspelar sig.','category':'Platon','tag':'Samlingsvolym','art':'sokrates-sista-dagar','format':'-granskning','path':'sokrates-sista-dagar'},
  'staten-bok-i-ii':{'id':'staten-bok-i-ii','titel':'Staten, bok I–II','forfattare':'Platon','ingress':'Vad är rättvisa? Sokrates diskuterar den starkares rätt och stadens uppkomst med Thrasymachos, Glaukon och Adeimantos. Endast de två första av verkets tio böcker är översatta här, via Paul Shoreys engelska text med grekiska kontroller.','category':'Platon','tag':'Endast bok I–II','art':'staten-bok-i-ii','format':'-arbetsutgava','path':'staten-bok-i-ii'}
 }
-category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment'}
+category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','sjalvbetraktelser':'Stoa','kategorierna':'Aristoteles','omtolkningen':'Aristoteles','forsokratikerna':'Fragment'}
 book_data={b['id']:{**b,'category':category.get(b['id'],'Övrigt'),'tag':'AI-översättning','art':b['id'],'format':'-granskning','path':b['id']} for b in CONFIG['verk']}
 book_data.update(specials)
 ordered=['sokrates-sista-dagar','forsokratikerna','staten-bok-i-ii','euthyfron','forsvarstalet','kriton','faidon','kategorierna','handboken']
+ordered += [id for id in book_data if id not in ordered]
 
 
 def q(s):return html.escape(str(s),quote=True)
@@ -182,6 +183,9 @@ def org_profile():
 def update_docs():
  c=CONFIG.copy();c['repo_url']=REPO_URL;c['site_url']=SITE_URL
  (ROOT/'config.json').write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ # Site refreshes must not append another copy of the setup documentation.
+ if (ROOT/'PUBLICERA_GITHUB.md').exists() and '## Ny portal och logo' in (ROOT/'README.md').read_text(encoding='utf-8'):
+  return
  p=ROOT/'README.md';readme=p.read_text(encoding='utf-8')
  readme=readme.replace('Varje verk finns som webbsida, EPUB och PDF (A5).','Varje utgåva finns som webbsida, EPUB och PDF. **Undantag:** *Staten* har en PDF i ursprungligt A4-format; EPUB och HTML är rekonstruerade från denna. *Staten* innehåller bara böckerna I och II (av tio).')
  readme=readme.replace('Alla texter granskas av en människa innan de publiceras.','**Utgåvorna är arbetsversioner och är ännu inte externt fackgranskade.**')
@@ -197,4 +201,4 @@ if __name__=='__main__':
  staten_page();socrates_page()
  (SITE/'index.html').write_text(homepage(),encoding='utf-8')
  update_docs();org_profile()
- print('Created modern portal, nine library entries, reading views, and organization profile.')
+ print(f'Created portal with {len(ordered)} library entries, reading views, and organization profile.')
