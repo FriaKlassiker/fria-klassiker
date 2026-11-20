@@ -33,6 +33,19 @@ Exakta Stephanus-bokstäver och citatgränser ska därför kontrolleras i
 originalet. Kitets etikett Oxford 1903 har för de tre Platondialogerna
 ersatts med den kontrollerade TEI-källans metadata, Oxford 1905.
 
+## Epiktetos Samtal – översättningsväg
+
+Utgåvan omfattar Arrianos inledning och böckerna I–III; bok IV är ännu inte
+färdigställd och pågår i den lokala översättningskön. Den svenska texten är
+en AI-arbetsutgåva som översatts från George Longs engelska översättning
+(London 1890, fri från upphovsrätt) av en lokalt finjusterad Gemma 4 31B
+(Fria klassiker LoRA v1). Den får inte beskrivas som direktöversättning från
+grekiskan. Grekisk jämförelsetext från Perseus Digital Library
+(canonical-greekLit, tlg0557.tlg001, samma revision som ovan) är bevarad i
+arbetsmaterialet utanför bokrepot. Kapitelindelningen följer den digitala
+utgåvans bok- och kapitelstruktur. Texten är inte mänskligt granskad;
+automatiska kontroller kan inte säkerställa betydelsetrohet.
+
 ## Losacco-uppgiften
 
 Checklistans tidigare oklarhet om Michele Losaccos dödsår har utretts.

@@ -2,7 +2,7 @@
   "serie": "Fria klassiker",
   "undertitel": "Antik filosofi på svenska – fritt att läsa, kopiera och dela",
   "version": "0.9",
-  "datum": "2026-11-19",
+  "datum": "2026-11-20",
   "granskad": false,
   "granskare": "David Vesterlund",
   "utgivare": "Vesterlund Ventures Holding AB, Bankeryd",
@@ -102,6 +102,33 @@
       "isbn_epub": "",
       "isbn_pdf": "",
       "ingress": "Kategorierna är den första skriften i Aristoteles logiska verk, Organon. Den frågar vad det är vi talar om när vi säger något om något, och delar in allt som sägs utan förbindelse i tio slag: väsen, mängd, beskaffenhet, det relativa, var, när, läge, innehav, görande och undergående. Den långa delen om väsen, med skillnaden mellan första väsen (den enskilda människan) och andra väsen (arten och släktet), har präglat hela den västerländska filosofin. Skriften avslutas med de så kallade postpraedicamenta: om motsatser, om tidigare och samtidigt, om rörelse och om att ha."
+    },
+    {
+      "id": "samtal",
+      "fil": "samtal.md",
+      "forfattare": "Epiktetos / Arrianos",
+      "titel": "Samtal",
+      "originaltitel": "Ἐπικτήτου διατριβαί (Epiktētou diatribai)",
+      "refsystem": "avsnitt",
+      "kapitelprefix": "Bok",
+      "kapitelnamn": {
+        "0": "Arrianos inledning"
+      },
+      "modell": "Gemma 4 31B (Fria klassiker LoRA v1)",
+      "modelltillverkare": "lokalt finjusterad språkmodell",
+      "oversattningsmanad": "november 2026",
+      "ai_metod": "AI-arbetsutgåva: texten har översatts från George Longs engelska översättning (1890) av en lokalt finjusterad Gemma 4 31B. Den är inte översatt direkt från grekiskan. Grekisk jämförelsetext från Perseus Digital Library är bevarad i arbetsmaterialet. Utgåvan omfattar Arrianos inledning och böckerna I–III av fyra; bok IV är ännu inte färdigställd.",
+      "grekiska": "Epiktetos, Samtal, digital utgåva i Perseus Digital Library (canonical-greekLit, tlg0557.tlg001), CC BY-SA 4.0",
+      "engelska": "George Long (övers.), The Discourses of Epictetus, London 1890 (fri från upphovsrätt)",
+      "kolofon_kallor": [
+        "Grekisk jämförelsetext: Epiktetos, Samtal, digital utgåva i Perseus Digital Library (canonical-greekLit, tlg0557.tlg001).",
+        "Engelsk förlaga: George Long (övers.), The Discourses of Epictetus, London 1890 (fri från upphovsrätt).",
+        "Svensk text: AI-arbetsutgåva via engelska med lokalt finjusterad Gemma 4 31B; inte direktöversatt från grekiskan."
+      ],
+      "licens_kalla": "Den grekiska jämförelsetexten kommer från Perseus Digital Library under samma licens.",
+      "isbn_epub": "",
+      "isbn_pdf": "",
+      "ingress": "Epiktetos föddes som slav, undervisades av stoikern Musonius Rufus och blev själv stois lärare i Rom. Hans elev Arrianos tecknade ned undervisningen i fyra böcker Samtal, det mest omfattande bevarade verket från den stoiska traditionen: praktiska samtal om omdöme, plikt, uthållighet och självbehärskning. Denna arbetsutgåva omfattar Arrianos inledning och böckerna I–III; bok IV är ännu inte färdigställd."
     },
     {
       "id": "forsokratikerna",

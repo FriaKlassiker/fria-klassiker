@@ -18,14 +18,17 @@ SITE_URL='https://friaklassiker.github.io/fria-klassiker/'
 
 specials={
  'sokrates-sista-dagar':{'id':'sokrates-sista-dagar','titel':'Sokrates sista dagar','forfattare':'Platon','ingress':'Följ Sokrates från anklagelsen till den sista dagen i fängelset. De fyra dialogerna Euthyfron, Sokrates försvarstal, Kriton och Faidon samlas här i den ordning som berättelsen utspelar sig.','category':'Platon','tag':'Samlingsvolym','art':'sokrates-sista-dagar','format':'-granskning','path':'sokrates-sista-dagar'},
- 'staten-bok-i-ii':{'id':'staten-bok-i-ii','titel':'Staten, bok I–II','forfattare':'Platon','ingress':'Vad är rättvisa? Sokrates diskuterar den starkares rätt och stadens uppkomst med Thrasymachos, Glaukon och Adeimantos. Endast de två första av verkets tio böcker är översatta här, via Paul Shoreys engelska text med grekiska kontroller.','category':'Platon','tag':'Endast bok I–II','art':'staten-bok-i-ii','format':'-arbetsutgava','path':'staten-bok-i-ii'}
+ 'staten-bok-i-ii':{'id':'staten-bok-i-ii','titel':'Staten, bok I–II','forfattare':'Platon','ingress':'Vad är rättvisa? Sokrates diskuterar den starkares rätt och stadens uppkomst med Thrasymachos, Glaukon och Adeimantos. Endast de två första av verkets tio böcker är översatta här, via Paul Shoreys engelska text med grekiska kontroller.','category':'Platon','tag':'Endast bok I–II','art':'staten-bok-i-ii','format':'-arbetsutgava','path':'staten-bok-i-ii'},
+ 'staten':{'id':'staten','titel':'Staten · bok I–X','forfattare':'Platon','ingress':'Hela Platons Staten på svenska. Bok III–X har översatts med en lokalt finjusterad Gemma 4 31B, via Paul Shoreys engelska text. Välj bok, läs online eller hämta som PDF och EPUB. Ogranskade arbetsutgåvor.','category':'Platon','tag':'10 böcker · Arbetsutgåva','art':'staten-komplett-01-10','format':'-granskning','path':'staten','omslag':'nedladdning/staten-komplett-01-10-granskning-omslag.jpg','read_label':'Välj bok'}
 }
-category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment','omtolkningen':'Aristoteles','sjalvbetraktelser':'Stoa'}
+category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','samtal':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment','omtolkningen':'Aristoteles','sjalvbetraktelser':'Stoa'}
 book_data={b['id']:{**b,'category':category.get(b['id'],'Övrigt'),'tag':'AI-översättning','art':b['id'],'format':'-granskning','path':b['id']} for b in CONFIG['verk']}
 book_data.update(specials)
 for b in CONFIG.get('importerade_verk', []):
  book_data[b['id']] = {**b, 'category':category.get(b['id'],'Övrigt'), 'tag':'Ny utgåva', 'art':b['id'], 'format':'-granskning','path':b['id']}
-ordered=['sokrates-sista-dagar','sjalvbetraktelser','omtolkningen','forsokratikerna','staten-bok-i-ii','euthyfron','forsvarstalet','kriton','faidon','kategorierna','handboken']
+ordered=['sokrates-sista-dagar','sjalvbetraktelser','omtolkningen','forsokratikerna','staten','staten-bok-i-ii','euthyfron','forsvarstalet','kriton','faidon','kategorierna','handboken','samtal']
+# Entries missing from this checkout's config must not break the portal.
+ordered=[id for id in ordered if id in book_data]
 
 
 def q(s):return html.escape(str(s),quote=True)
@@ -48,11 +51,12 @@ def footer(base):
  <div><div class="footer-brand"><img src="{base}assets/brand-mark.svg" alt="" width="43" height="43">Fria klassiker</div>
  <p>Antik filosofi på svenska. Gratis att läsa, dela och förbättra. Oberoende öppet textprojekt och en transparent undersökning av AI-översättning.</p></div>
  <nav class="footer-links" aria-label="Sidfot"><a href="{base}index.html#bibliotek">Alla texter</a><a href="{base}om.html">Metod &amp; källor</a><a href="{base}rattelser.html">Rapportera fel</a><a href="{REPO_URL}">Källkod</a></nav>
- </div><div class="site-container footer-bottom">Arbetsutgåva 0.9 · 19 november 2026 · Svenska AI-översättningar · CC BY-SA 4.0 för publicerat textmaterial enligt angiven källlicens. Ingen extern filologisk granskning har bekräftats.</div></footer>'''
+ </div><div class="site-container footer-bottom">Arbetsutgåva 0.9 · 20 november 2026 · Svenska AI-översättningar · CC BY-SA 4.0 för publicerat textmaterial enligt angiven källlicens. Ingen extern filologisk granskning har bekräftats.</div></footer>'''
 
 def buttons(book):
  id=book['id']
  if id=='staten-bok-i-ii': slug='staten-bok-i-ii-arbetsutgava'
+ elif id=='staten': slug='staten-komplett-01-10-granskning'
  else:slug=id+'-granskning'
  return ('verk/'+book['path']+'.html','nedladdning/'+slug+'.pdf','nedladdning/'+slug+'.epub')
 
@@ -62,7 +66,8 @@ def card(book):
  if book['id']=='sokrates-sista-dagar':tag='4 dialoger i 1'
  if book['id']=='forsokratikerna':tag='805 textposter'
  if book['id']=='staten-bok-i-ii':tag='Ofullständig utgåva'
- cover='nedladdning/'+book['art']+'-omslag.jpg'
+ cover=book.get('omslag') or ('nedladdning/'+book['art']+'-omslag.jpg')
+ read_label=book.get('read_label','Läs online')
  excerpt=book['ingress']
  if len(excerpt)>230:excerpt=excerpt[:225].rsplit(' ',1)[0]+'…'
  searchable=' '.join([book['titel'],book['forfattare'],book['ingress'],book['category']]).casefold()
@@ -70,7 +75,7 @@ def card(book):
  <a href="{q(read)}" class="book-visual" aria-label="Läs {q(book['titel'])}">
  <img loading="lazy" src="{q(cover)}" alt="Bokomslag: {q(book['titel'])}" width="160" height="256"><span class="book-badge">{q(tag)}</span></a>
  <div class="book-content"><span class="book-author">{q(book['forfattare'])}</span><h3><a href="{q(read)}">{q(book['titel'])}</a></h3><p class="book-description">{q(excerpt)}</p>
- <div class="book-links"><a href="{q(read)}">Läs online ↗</a><a href="{q(epub)}" download>↓ EPUB</a><a href="{q(pdf)}" download>↓ PDF</a></div></div></article>'''
+ <div class="book-links"><a href="{q(read)}">{q(read_label)} ↗</a><a href="{q(epub)}" download>↓ EPUB</a><a href="{q(pdf)}" download>↓ PDF</a></div></div></article>'''
 
 def homepage():
  cards='\n'.join(card(book_data[i]) for i in ordered)
