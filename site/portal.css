@@ -142,3 +142,18 @@ body.reading-night .edition-alert{background:#3b322c;color:#e8d1ab;border-color:
 @media(max-width:950px){.hero-inner{grid-template-columns:1fr .72fr;gap:10px}.hero h1{font-size:3.8rem}.hero-art{transform:scale(.86);transform-origin:center left}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.method-inner{gap:30px}}
 @media(max-width:690px){.site-container{width:min(100% - 30px,560px)}.nav-inner{min-height:78px;flex-wrap:wrap;padding:12px 0;gap:8px}.nav-brand{font-size:1.04rem}.nav-brand img{width:40px;height:40px}.nav-links{width:100%;gap:15px;justify-content:space-between;font-size:.74rem}.nav-links .nav-cta{padding:5px 9px}.hero-inner{grid-template-columns:1fr;padding-top:56px;padding-bottom:38px;min-height:0}.hero h1{font-size:clamp(3.4rem,10vw,4.3rem)}.hero-art{height:405px;transform:scale(.76);transform-origin:top center;margin:-5px -48px -85px}.hero-cover{width:207px;height:332px}.hero-cover-a{left:13%}.hero-cover-b{left:44%}.hero-cover-c{left:27%}.hero-stamp{bottom:9%}.stats-inner{gap:7px;padding:20px 0}.stat{display:block;text-align:center}.stat b{display:block;font-size:1.65rem}.stat span{font-size:.64rem}.section-pad{padding-top:57px;padding-bottom:65px}.section-heading{display:block}.section-heading h2{font-size:2.5rem}.section-heading p{margin-top:14px}.filter-tabs{gap:6px}.filter{font-size:.7rem;padding:8px 11px}.search-box{width:100%}.book-grid{grid-template-columns:1fr;gap:18px}.book-visual{height:280px}.method-inner{grid-template-columns:1fr;gap:25px}.method-quote{padding:24px}.footer-inner{grid-template-columns:1fr;gap:8px}.footer-links{justify-content:flex-start;gap:15px}.reader-page main,.information-page main{padding:28px 24px 70px}.reader-toolbar{align-items:flex-start}.reader-page .steph{margin-right:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Staten: year-by-year reviewed book editions. */
+.staten-hub-entry { padding:19px 0;border-bottom:1px solid var(--line); }
+.staten-hub-entry h2 {font-size:1.35rem!important;margin:5px 0 9px!important;border:0!important;padding:0!important}
+.staten-hub-entry p{margin:6px 0!important;text-indent:0!important}
+.staten-hub-entry a,.staten-collection-links a{color:var(--wine);font-weight:700}
+.staten-collection-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:14px 0 25px}
+.staten-collection-links>div{background:#fffcf7;border:1px solid var(--line);padding:15px;border-radius:9px}
+.staten-collection-links p{text-indent:0!important;margin:10px 0!important}
+.staten-ref-index{border:1px solid var(--line);background:#fff9ef;padding:10px 15px;border-radius:9px;margin:14px 0 30px}
+.staten-ref-index summary{cursor:pointer;font:700 .82rem system-ui,sans-serif;color:var(--wine)}
+.staten-ref-links{display:flex;flex-wrap:wrap;gap:10px;padding:14px 0 4px}
+.staten-ref-links a{font:650 .76rem system-ui,sans-serif;white-space:nowrap}
+.staten-page section[id^="stephanus-"]{scroll-margin-top:24px}
+@media(max-width:620px){.staten-collection-links{grid-template-columns:1fr}}
