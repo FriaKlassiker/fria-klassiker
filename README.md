@@ -2,7 +2,7 @@
 
 Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 
-**Alla texter är AI-översättningar.** Platon, Aristoteles och Epiktetos (*Handboken*) samt Marcus Aurelius är översatta direkt från grekiskan av Claude Opus 5.5 (Anthropic). Försokratikerna är översatta av ChatGPT 6.1 (OpenAI), delvis via John Burnets engelska. Epiktetos *Samtal* (inledning och böckerna I–III) är en AI-arbetsutgåva som översatts **via George Longs engelska** med en lokalt finjusterad Gemma 4 31B. **Utgåvorna är arbetsversioner och är ännu inte externt fackgranskade.** Se `site/om.html` för metoden.
+**Alla texter är AI-översättningar.** Platon, Aristoteles och Epiktetos (*Handboken*) samt Marcus Aurelius är översatta direkt från grekiskan av Claude Opus 5.5 (Anthropic). Försokratikerna är översatta av ChatGPT 6.1 (OpenAI), delvis via John Burnets engelska. Epiktetos *Samtal* (inledning och böckerna I–III) är en AI-arbetsutgåva som översatts **via George Longs engelska** med en lokalt finjusterad Gemma 4 31B. **Utgåvorna är arbetsversioner och är ännu inte externt fackgranskade.** Undantag: Aristoteles *Kategorierna* har granskats i sin helhet av David Vesterlund (utgåva 1.0, 2026-11-20). Se `site/om.html` för metoden.
 
 ## Innehåll
 
@@ -12,7 +12,7 @@ Antik filosofi på modern svenska, fritt att läsa, kopiera och dela.
 | Platon: Euthyfron | Burnet 1905 (Perseus) | Fowler 1914 |
 | Platon: Kriton | Burnet 1905 (Perseus) | Fowler 1914 |
 | Platon: Faidon | Burnet 1905 (Perseus) | Fowler 1914 |
-| Aristoteles: Kategorierna | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Lindén |
+| Aristoteles: Kategorierna (granskad utgåva 1.0) | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Jan-Ivar Lindén; granskad av David Vesterlund |
 | Aristoteles: Om tolkningen | Bekker 1837 (First1KGreek) | Owen 1853 (kontroll); terminologi efter Lindén och Kategorierna |
 | Epiktetos: Handboken | Schenkl 1916 (Perseus) | Long 1890 |
 | Marcus Aurelius: Självbetraktelser | Leopold 1908 (Perseus) | Haines 1916 (kontroll) |

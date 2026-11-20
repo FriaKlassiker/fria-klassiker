@@ -12,7 +12,8 @@
       const q = (input?.value || '').trim().toLocaleLowerCase('sv-SE');
       let visible = 0;
       for (const card of cards) {
-        const matchesGroup = current === 'alla' || card.dataset.category === current;
+        const cats = (card.dataset.category || '').split(' ');
+        const matchesGroup = current === 'alla' || cats.includes(current);
         const matchesText = (card.dataset.search || '').includes(q);
         card.hidden = !(matchesGroup && matchesText);
         if (!card.hidden) visible++;

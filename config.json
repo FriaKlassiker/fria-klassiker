@@ -90,18 +90,23 @@
       "modell": "Claude Opus 5.5",
       "modelltillverkare": "Anthropic",
       "oversattningsmanad": "november 2026",
-      "ai_metod": "Texten har översatts direkt från grekiskan av språkmodellen {modell} i {manad} och därefter kontrollerats mot en äldre engelsk översättning (Octavius Freire Owen, 1853). Terminologin följer Mikael Lindéns svenska översättning av Aristoteles Metafysik, så att till exempel ousia återges med väsen, poion med beskaffenhet och symbebêkos med åtföljande.",
+      "ai_metod": "Texten har översatts direkt från grekiskan av språkmodellen {modell} i {manad} och därefter kontrollerats mot en äldre engelsk översättning (Octavius Freire Owen, 1853). Terminologin följer Jan-Ivar Lindéns svenska översättning av Aristoteles Metafysik, så att till exempel ousia återges med väsen, poion med beskaffenhet och symbebêkos med åtföljande. Översättningen har därefter granskats i sin helhet av David Vesterlund (november 2026). Rättat vid granskningen: ποσόν återges med hur mycket (tidigare mängd), kategorin ἔχειν med att ha (tidigare innehav, som nu bara används för ἕξις) och διωρισμένον med åtskilt (tidigare avgränsad).",
       "grekiska": "Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, digital utgåva i Open Greek and Latin / First1KGreek (University of Leipzig), CC BY-SA 4.0",
       "engelska": "Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt)",
       "kolofon_kallor": [
         "Grekisk text: Immanuel Bekker (red.), Aristotelis Opera, vol. 1, Oxford 1837, i digital utgåva från Open Greek and Latin / First1KGreek (University of Leipzig).",
         "Engelsk kontrollöversättning: Octavius Freire Owen, The Organon, or Logical Treatises, of Aristotle, vol. 1, London 1853 (fri från upphovsrätt).",
-        "Terminologin följer Mikael Lindéns översättning av Metafysiken; ingen text ur den har återgivits."
+        "Granskning: hela texten har granskats av David Vesterlund, november 2026. Rättat vid granskningen: ποσόν återges med hur mycket (tidigare mängd), ἔχειν med att ha (tidigare innehav, som nu bara används för ἕξις) och διωρισμένον med åtskilt (tidigare avgränsad).",
+        "Terminologin följer Jan-Ivar Lindéns översättning av Metafysiken; ingen text ur den har återgivits."
       ],
       "licens_kalla": "Den grekiska texten kommer från Open Greek and Latin / First1KGreek, University of Leipzig, under samma licens.",
       "isbn_epub": "",
       "isbn_pdf": "",
-      "ingress": "Kategorierna är den första skriften i Aristoteles logiska verk, Organon. Den frågar vad det är vi talar om när vi säger något om något, och delar in allt som sägs utan förbindelse i tio slag: väsen, mängd, beskaffenhet, det relativa, var, när, läge, innehav, görande och undergående. Den långa delen om väsen, med skillnaden mellan första väsen (den enskilda människan) och andra väsen (arten och släktet), har präglat hela den västerländska filosofin. Skriften avslutas med de så kallade postpraedicamenta: om motsatser, om tidigare och samtidigt, om rörelse och om att ha."
+      "ingress": "Kategorierna är den första skriften i Aristoteles logiska verk, Organon. Den frågar vad det är vi talar om när vi säger något om något, och delar in allt som sägs utan förbindelse i tio slag: väsen, hur mycket, beskaffenhet, det relativa, var, när, läge, att ha, görande och undergående. Den långa delen om väsen, med skillnaden mellan första väsen (den enskilda människan) och andra väsen (arten och släktet), har präglat hela den västerländska filosofin. Skriften avslutas med de så kallade postpraedicamenta: om motsatser, om tidigare och samtidigt, om rörelse och om att ha.",
+      "granskad": true,
+      "granskare": "David Vesterlund",
+      "granskningsdatum": "2026-11-20",
+      "levererade_filer": true
     },
     {
       "id": "samtal",

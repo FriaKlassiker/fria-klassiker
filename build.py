@@ -85,9 +85,10 @@ def grek_span(t):
                   lambda m: '[' + m.group(0) + ']{.gr}', t)
 
 
-def granskningsmening():
-    if CFG['granskad']:
-        return f'Översättningen har lästs igenom och redigerats av {CFG["granskare"]}.'
+def granskningsmening(v=None):
+    granskad = v.get('granskad', CFG['granskad']) if v else CFG['granskad']
+    if granskad:
+        return f'Översättningen har lästs igenom och redigerats av {(v or {}).get("granskare", CFG["granskare"])}.'
     return '**Arbetsutgåva: mänsklig sakgranskning är inte bekräftad. Ingen extern filologisk granskning har redovisats.**'
 
 
@@ -110,7 +111,7 @@ def ai_text(verk_lista):
                  f'i {M(v0, "oversattningsmanad")}. '
                  f'Som stöd för förståelsen användes en äldre engelsk översättning ({eng}).')
     return (
-        '**Det här är en AI-översättning.** ' + metod + f' {granskningsmening()}\n\n'
+        '**Det här är en AI-översättning.** ' + metod + f' {granskningsmening(v0)}\n\n'
         'En AI-översättning kan innehålla fel: en mening kan vara feltolkad, en nyans kan ha gått förlorad '
         'eller en bisats ha fallit bort. Den ersätter inte en vetenskaplig utgåva. '
         f'Hittar du ett fel, hör gärna av dig till {CFG["kontakt_epost"]} eller via {CFG["repo_url"]}/issues.\n'
@@ -154,7 +155,7 @@ def kolofon(titel, forf, verk_lista, isbn_epub, isbn_pdf):
     rader = [
         f'{forf}: *{titel}*. Originalets titel: {orig}.',
         f'Översättning: språkmodellen {modellnamn(v0)}, {M(v0, "oversattningsmanad")}. '
-        + ('Granskning och redigering: ' + CFG['granskare'] + '.' if CFG['granskad'] else 'Arbetsutgåva; mänsklig sakgranskning är inte bekräftad.'),
+        + ('Granskning och redigering: ' + v0.get('granskare', CFG['granskare']) + '.' if v0.get('granskad', CFG['granskad']) else 'Arbetsutgåva; mänsklig sakgranskning är inte bekräftad.'),
         *kallor,
         f'{CFG["serie"]}, utgåva {CFG["version"]}, {CFG["datum"]}. Utgivare: {CFG["utgivare"]}.' + (f' {isbn}.' if isbn else ''),
         'Licens: Creative Commons Erkännande-DelaLika 4.0 Internationell (CC BY-SA 4.0), '
@@ -199,7 +200,7 @@ def bok_md(bok_id, titel, forf, verk_lista, ingress, isbn_epub, isbn_pdf, fmt):
 
 # ---------- omslag ---------------------------------------------------------
 
-def omslag(bok_id, titel, forf, ut, rad='Översatt från grekiskan'):
+def omslag(bok_id, titel, forf, ut, rad='Översatt från grekiskan', badge='AI-översättning', granskad=None):
     from PIL import Image, ImageDraw, ImageFont
     font = str(ROT / 'mallar/fonts/Cardo-Regular.ttf')
     fonti = str(ROT / 'mallar/fonts/Cardo-Italic.ttf')
@@ -237,8 +238,10 @@ def omslag(bok_id, titel, forf, ut, rad='Översatt från grekiskan'):
         y = centrera(r, y, 190)
     dr.line([(W / 2 - 160, y + 70), (W / 2 + 160, y + 70)], fill=rod, width=4)
     centrera(rad, H - 620, 64, f=fonti)
-    centrera('AI-översättning', H - 520, 64, f=fonti, farg=rod)
-    if not CFG['granskad']:
+    centrera(badge, H - 520, 64, f=fonti, farg=rod)
+    if granskad is None:
+        granskad = CFG['granskad']
+    if not granskad:
         centrera('GRANSKNINGSEXEMPLAR', H - 330, 56, farg=(150, 110, 0))
     img.save(ut, quality=90)
 
@@ -262,7 +265,9 @@ def bocker():
 
 
 def filnamn(bok_id):
-    return bok_id + ('' if CFG['granskad'] else '-granskning')
+    v = VERK.get(bok_id)
+    granskad = v.get('granskad', CFG['granskad']) if v else CFG['granskad']
+    return bok_id + ('' if granskad else '-granskning')
 
 
 def bygg_bocker():
@@ -272,10 +277,19 @@ def bygg_bocker():
         fn = filnamn(bok_id)
         cover = BYGG / f'{bok_id}-omslag.jpg'
         v0 = vl[0]
+        granskad = v0.get('granskad', CFG['granskad'])
+        if v0.get('levererade_filer'):
+            # Utgivaren har levererat färdiga PDF/EPUB-filer; de skrivs aldrig över av bygget.
+            omslag(bok_id, titel, forf, cover, v0.get('omslag_rad', 'Översatt från grekiskan'),
+                   badge='Mänskligt granskad' if granskad else 'AI-översättning', granskad=granskad)
+            shutil.copy(cover, NED / f'{bok_id}-omslag.jpg')
+            print(f'levererad utgåva behållen: {fn}')
+            continue
         if (NED / f'{bok_id}-omslag.jpg').exists():
             shutil.copy2(NED / f'{bok_id}-omslag.jpg', cover)
         else:
-            omslag(bok_id, titel, forf, cover, v0.get('omslag_rad', 'Översatt från grekiskan'))
+            omslag(bok_id, titel, forf, cover, v0.get('omslag_rad', 'Översatt från grekiskan'),
+                   badge='Mänskligt granskad' if granskad else 'AI-översättning', granskad=granskad)
         shutil.copy(cover, NED / f'{bok_id}-omslag.jpg')
         meta = [
             '--metadata', f'title={titel}', '--metadata', f'author={forf}',
@@ -284,7 +298,7 @@ def bygg_bocker():
             '--metadata', f'publisher={CFG["utgivare"]}',
             '--metadata', 'rights=CC BY-SA 4.0',
             '--metadata', f'contributor=Översättning: {modellnamn(v0)}'
-                          + (f'; granskning: {CFG["granskare"]}' if CFG['granskad'] else ''),
+                          + (f'; granskning: {v0.get("granskare", CFG["granskare"])}' if granskad else ''),
             '--metadata', 'description=' + ingress + f' AI-översättning ({modellnamn(v0)}).',
         ]
         if ie:

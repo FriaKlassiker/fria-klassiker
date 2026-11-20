@@ -22,7 +22,7 @@ specials={
  'staten':{'id':'staten','titel':'Staten · bok I–X','forfattare':'Platon','ingress':'Hela Platons Staten på svenska. Bok III–X har översatts med en lokalt finjusterad Gemma 4 31B, via Paul Shoreys engelska text. Välj bok, läs online eller hämta som PDF och EPUB. Ogranskade arbetsutgåvor.','category':'Platon','tag':'10 böcker · Arbetsutgåva','art':'staten-komplett-01-10','format':'-granskning','path':'staten','omslag':'nedladdning/staten-komplett-01-10-granskning-omslag.jpg','read_label':'Välj bok'}
 }
 category={'euthyfron':'Platon','forsvarstalet':'Platon','kriton':'Platon','faidon':'Platon','handboken':'Stoa','samtal':'Stoa','kategorierna':'Aristoteles','forsokratikerna':'Fragment','omtolkningen':'Aristoteles','sjalvbetraktelser':'Stoa'}
-book_data={b['id']:{**b,'category':category.get(b['id'],'Övrigt'),'tag':'AI-översättning','art':b['id'],'format':'-granskning','path':b['id']} for b in CONFIG['verk']}
+book_data={b['id']:{**b,'category':category.get(b['id'],'Övrigt')+((' Granskad') if b.get('granskad') else ''),'tag':('Mänskligt granskad' if b.get('granskad') else 'AI-översättning'),'art':b['id'],'format':('' if b.get('granskad') else '-granskning'),'path':b['id']} for b in CONFIG['verk']}
 book_data.update(specials)
 for b in CONFIG.get('importerade_verk', []):
  book_data[b['id']] = {**b, 'category':category.get(b['id'],'Övrigt'), 'tag':'Ny utgåva', 'art':b['id'], 'format':'-granskning','path':b['id']}
@@ -43,8 +43,11 @@ def header(base,active=''):
  <a class="nav-cta" href="{REPO_URL}" rel="noopener noreferrer">GitHub ↗</a>
  </nav></div></header>'''
 
-def alert():
- return '<div class="edition-alert" role="note"><strong>Arbetsutgåvor.</strong> AI-framställda översättningar, ännu inte fackgranskade av en klassiker. Kontrollera viktiga citat mot originaltexten.</div>'
+def alert(work_id=None):
+ reviewed=work_id is not None and any(b['id']==work_id and b.get('granskad') for b in CONFIG['verk'])
+ if reviewed:
+  return '<div class="edition-alert" role="note"><strong>Mänskligt granskad utgåva.</strong> AI-översättning som därefter granskats i sin helhet av David Vesterlund (november 2026). Rättelserna vid granskningen redovisas i utgåvan. Kontrollera ändå viktiga citat mot originaltexten.</div>'
+ return '<div class="edition-alert" role="note"><strong>Arbetsutgåvor.</strong> AI-framställda översättningar, i de flesta fall ännu inte fackgranskade. Kontrollera viktiga citat mot originaltexten.</div>'
 
 def footer(base):
  return f'''<footer class="site-footer"><div class="site-container footer-inner">
@@ -57,6 +60,7 @@ def buttons(book):
  id=book['id']
  if id=='staten-bok-i-ii': slug='staten-bok-i-ii-arbetsutgava'
  elif id=='staten': slug='staten-komplett-01-10-granskning'
+ elif book.get('granskad'): slug=id
  else:slug=id+'-granskning'
  return ('verk/'+book['path']+'.html','nedladdning/'+slug+'.pdf','nedladdning/'+slug+'.epub')
 
@@ -103,7 +107,7 @@ def homepage():
  <section class="site-container section-pad" id="bibliotek"><div class="section-heading"><div><div class="eyebrow">Bokhyllan</div><h2>Upptäck ett verk</h2></div>
  <p>Hitta en dialog att börja med, följ ett filosofiskt argument eller fördjupa dig i ett helt fragmentarkiv.</p></div>
  <div class="catalog-toolbar"><div class="filter-tabs" role="group" aria-label="Filtrera efter författare eller område">
- <button class="filter" data-filter="alla" aria-pressed="true">Alla</button><button class="filter" data-filter="Platon" aria-pressed="false">Platon</button><button class="filter" data-filter="Aristoteles" aria-pressed="false">Aristoteles</button><button class="filter" data-filter="Stoa" aria-pressed="false">Stoikerna</button><button class="filter" data-filter="Fragment" aria-pressed="false">Försokratikerna</button></div>
+ <button class="filter" data-filter="alla" aria-pressed="true">Alla</button><button class="filter" data-filter="Platon" aria-pressed="false">Platon</button><button class="filter" data-filter="Aristoteles" aria-pressed="false">Aristoteles</button><button class="filter" data-filter="Stoa" aria-pressed="false">Stoikerna</button><button class="filter" data-filter="Fragment" aria-pressed="false">Försokratikerna</button><button class="filter" data-filter="Granskad" aria-pressed="false">Granskad</button></div>
  <label class="search-box">{search_icon}<input id="search-books" type="search" placeholder="Sök bland böckerna" aria-label="Sök bland böckerna"></label></div>
  <p class="catalog-count" id="catalog-count" aria-live="polite">{count} av {count} utgåvor</p><div id="bok-katalog" class="book-grid">{cards}</div>
  </section>
@@ -130,7 +134,7 @@ def update_existing_page(filename,id=None):
  for old in s.body.select('.utkast, header.topp, footer.fot'):
   old.decompose()
  base='../' if filename.startswith('verk/') else ''
- nav=BeautifulSoup(alert()+header(base,'about' if filename=='om.html' else 'errors' if filename=='rattelser.html' else ''),'html.parser')
+ nav=BeautifulSoup(alert(id)+header(base,'about' if filename=='om.html' else 'errors' if filename=='rattelser.html' else ''),'html.parser')
  s.body.insert(0,nav)
  s.body.append(BeautifulSoup(footer(base),'html.parser'))
  for x in [x for x in s.head.find_all('link',rel='icon')]:x.decompose()

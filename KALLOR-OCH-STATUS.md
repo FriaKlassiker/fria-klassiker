@@ -33,6 +33,30 @@ Exakta Stephanus-bokstäver och citatgränser ska därför kontrolleras i
 originalet. Kitets etikett Oxford 1903 har för de tre Platondialogerna
 ersatts med den kontrollerade TEI-källans metadata, Oxford 1905.
 
+## Kategorierna – mänskligt granskad utgåva 1.0
+
+Utgåvan av *Kategorierna* är den första i serien som granskats av en
+människa. Hela texten har granskats av David Vesterlund (november 2026).
+Rättat vid granskningen: ποσόν återges med *hur mycket* (tidigare
+*mängd*), kategorin ἔχειν med *att ha* (tidigare *innehav*, som nu bara
+används för ἕξις) och διωρισμένον med *åtskilt* (tidigare *avgränsad*).
+Detta är utgivarens egen granskning, inte en extern filologisk
+granskning, och utgåvan ersätter inte en vetenskaplig edition.
+
+Granskningsjämförelse: webbtexten har uppdaterats från den granskade
+EPUB-utgåvan, och en normaliserad jämförelse mot föregående utgåva
+visar att skillnaderna är exakt de tre dokumenterade rättningarna.
+PDF- och EPUB-filerna är de av utgivaren levererade utgåvorna
+(2026-11-20); byggskripten skriver aldrig över dem
+(`levererade_filer` i `config.json`). Filnamnen saknar
+`-granskning`-suffixet eftersom utgåvan är granskad.
+
+Kända skillnader i den levererade PDF:en: kolofonen uppgiver
+fortfarande *Mikael Lindéns* (rätt uppgift är Jan-Ivar Lindén; webben
+och EPUB:en är rättade), länken för senaste version pekar på repot i
+stället för webbplatsen, och utgåvenumret är 1.0 medan serien i övrigt
+ligger på 0.9. Felrapportering och rättelser tas in i nästa utgåva.
+
 ## Epiktetos Samtal – översättningsväg
 
 Utgåvan omfattar Arrianos inledning och böckerna I–III; bok IV är ännu inte
